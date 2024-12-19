@@ -44,45 +44,19 @@ namespace EffingoFaciemTuam
 			Properties.Settings.Default.Save();
 		}
 
-		//handling of locking and copying textboxes
-		private void LockTextBox_Checked(object sender, RoutedEventArgs e)
-		{
-			var checkBox = sender as CheckBox;
-			var textBox = checkBox?.Tag as TextBox;
 
-			if (textBox != null)
-			{
-				textBox.IsReadOnly = true;
-				Clipboard.SetText(textBox.Text);
-				textBox.Focusable = false;
-				textBox.Cursor = System.Windows.Input.Cursors.Hand;
-			}
-		}
-		private void LockTextBox_Unchecked(object sender, RoutedEventArgs e)
-		{
-			var checkBox = sender as CheckBox;
-			var textBox = checkBox?.Tag as TextBox;
-
-			if (textBox != null)
-			{
-				textBox.IsReadOnly = false;
-				textBox.Focusable = true;
-				textBox.Cursor = System.Windows.Input.Cursors.IBeam;
-			}
-		}
-
-		private void CopyText_LeftClick(object sender, RoutedEventArgs e)
-		{
-			var textBox = sender as TextBox;
-			if (textBox != null && textBox.IsReadOnly)
-			{
-				Clipboard.SetText(textBox.Text);
-			}
-		}
 
 		private void CheckBox_Clicked(object sender, RoutedEventArgs e)
 		{
+			//DODAĆ rozpoznac czy checkbox jest zaznaczony i dopiero poźniej zmienić .Topmost
 			this.Topmost = !this.Topmost;
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			var button = sender as Button;
+			var textBox = button?.Tag as TextBox;
+			Clipboard.SetText(textBox?.Text);
 		}
 	}
 }
