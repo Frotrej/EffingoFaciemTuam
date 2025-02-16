@@ -20,7 +20,7 @@ namespace EffingoFaciemTuam
 		{
 			InitializeComponent();
 
-			//primitive loading Saved Properties.settings of user data
+			//loading Saved Properties.settings of user data
 			#region loadingUserData
 			TextBox1.Text = Properties.Settings.Default.SavedTextBox1;
 			TextBox2.Text = Properties.Settings.Default.SavedTextBox2;
@@ -31,9 +31,10 @@ namespace EffingoFaciemTuam
 			TextBox7.Text = Properties.Settings.Default.SavedTextBox7;
 			#endregion 
 		}
-		//primitive saving user data to Properties.settings
+		//saving user data to Properties.settings
 		private void OnMainWindowClose(object sender, EventArgs e)
 		{
+			#region savingUserData
 			Properties.Settings.Default.SavedTextBox1 = TextBox1.Text;
 			Properties.Settings.Default.SavedTextBox2 = TextBox2.Text;
 			Properties.Settings.Default.SavedTextBox3 = TextBox3.Text;
@@ -42,6 +43,7 @@ namespace EffingoFaciemTuam
 			Properties.Settings.Default.SavedTextBox6 = TextBox6.Text;
 			Properties.Settings.Default.SavedTextBox7 = TextBox7.Text;
 			Properties.Settings.Default.Save();
+			#endregion
 		}
 
 
@@ -56,7 +58,8 @@ namespace EffingoFaciemTuam
 		{
 			var button = sender as Button;
 			var textBox = button?.Tag as TextBox;
-			Clipboard.SetText(textBox?.Text);
+			var textBoxPrefix = button?.Tag as TextBox; //jak zrobic zeby zbindowac wieej niz jeden element tagiem
+			Clipboard.SetText(textBox?.Text + textBoxPrefix?.Text);
 		}
 	}
 }

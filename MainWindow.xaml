@@ -20,7 +20,6 @@
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="0.9*"/>
             <ColumnDefinition Width="0.1*"/>
-
         </Grid.ColumnDefinitions>
 
         
@@ -44,7 +43,7 @@
 
                 <WrapPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox1}" Click="Button_Click"/>
-                    <TextBox Name="TextBox1"  MinWidth="320" FontSize="34" Background="Gray" />
+                    <TextBox Name="TextBox1" MinWidth="320" FontSize="34" Background="Gray" />
                     <TextBox Name="SuffixValue1"  Width="80" FontSize="34" Background="DarkOrange" />
                 </WrapPanel>
 
