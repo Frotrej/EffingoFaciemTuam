@@ -29,7 +29,7 @@ namespace EffingoFaciemTuam
 			TextBox5.Text = Properties.Settings.Default.SavedTextBox5;
 			TextBox6.Text = Properties.Settings.Default.SavedTextBox6;
 			TextBox7.Text = Properties.Settings.Default.SavedTextBox7;
-			#endregion 
+			#endregion
 		}
 		//saving user data to Properties.settings
 		private void OnMainWindowClose(object sender, EventArgs e)
@@ -60,6 +60,43 @@ namespace EffingoFaciemTuam
 			var textBox = button?.Tag as TextBox;
 			var textBoxPrefix = button?.Tag as TextBox; //jak zrobic zeby zbindowac wieej niz jeden element tagiem
 			Clipboard.SetText(textBox?.Text + textBoxPrefix?.Text);
+		}
+
+		private void Button1_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox1.Text, SuffixValue1.Text);
+		}
+		private void Button2_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox2.Text, SuffixValue2.Text);
+		}
+		private void Button3_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox3.Text, SuffixValue3.Text);
+		}
+		private void Button4_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox4.Text, SuffixValue4.Text);
+		}
+		private void Button5_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox5.Text, SuffixValue5.Text);
+		}
+		private void Button6_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox6.Text, SuffixValue6.Text);
+		}
+		private void Button7_coppy(object sender, RoutedEventArgs e)
+		{
+			JoinValuesAndCoppyToCB(TextBox7.Text, SuffixValue7.Text);
+		}
+
+
+		private void JoinValuesAndCoppyToCB(string main, string prefix)
+		{
+			string joinedValues = main + prefix;
+
+			Clipboard.SetText(joinedValues);
 		}
 	}
 }
