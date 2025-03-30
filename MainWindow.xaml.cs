@@ -62,6 +62,7 @@ namespace EffingoFaciemTuam
 			Clipboard.SetText(textBox?.Text + textBoxPrefix?.Text);
 		}
 
+		#region distinguishing the number of the Coppy button clicked 
 		private void Button1_coppy(object sender, RoutedEventArgs e)
 		{
 			JoinValuesAndCoppyToCB(TextBox1.Text, SuffixValue1.Text);
@@ -90,7 +91,7 @@ namespace EffingoFaciemTuam
 		{
 			JoinValuesAndCoppyToCB(TextBox7.Text, SuffixValue7.Text);
 		}
-
+		#endregion 
 
 		private void JoinValuesAndCoppyToCB(string main, string prefix)
 		{
