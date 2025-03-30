@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EffingoFaciemTuam"
         mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="580" HorizontalAlignment="Right" VerticalAlignment="Center"
+        Title="MainWindow" Height="550" Width="600" HorizontalAlignment="Right" VerticalAlignment="Center"
         
         Closing="OnMainWindowClose">
     <Grid>
@@ -20,16 +20,15 @@
             <ColumnDefinition Width="0.1*"/>
             <ColumnDefinition Width="0.9*"/>
             <ColumnDefinition Width="0.1*"/>
-
         </Grid.ColumnDefinitions>
 
-        
+
         <WrapPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <CheckBox HorizontalAlignment="Center" Click="CheckBox_Clicked"/>
             <Label Content="zablokuj" HorizontalAlignment="Center"/>
         </WrapPanel>
-        
-        
+
+
         <Border Grid.Column="1" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="1"  Margin="0,49,0,0" Grid.RowSpan="2">
             <Grid>
                 <Grid.RowDefinitions>
@@ -43,48 +42,50 @@
                 </Grid.RowDefinitions>
 
                 <WrapPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                    <CheckBox  Margin="7,7,7,7"  VerticalAlignment="Center" Tag="{Binding ElementName=TextBox1}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked" />
-                    <TextBox Name="TextBox1" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="Gray" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button1_coppy"/>
+                    <TextBox Name="TextBox1" MinWidth="320" FontSize="34" Background="Silver"/>
+                    <TextBox Name="SuffixValue1"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                    <CheckBox Margin="7,7,7,7" VerticalAlignment="Center" Tag="{Binding ElementName=TextBox2}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked"/>
-                    <TextBox Name="TextBox2" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="DarkRed" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button2_coppy"/>
+                    <TextBox Name="TextBox2" MinWidth="320" FontSize="34" Background="DarkRed" />
+                    <TextBox Name="SuffixValue2"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox Margin="7,7,7,7" VerticalAlignment="Center" Tag="{Binding ElementName=TextBox3}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked"/>
-                    <TextBox Name="TextBox3" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="DarkGreen" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button3_coppy"/>
+                    <TextBox Name="TextBox3" MinWidth="320" FontSize="34" Background="DarkGreen" />
+                    <TextBox Name="SuffixValue3"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox Margin="7,7,7,7" VerticalAlignment="Center" Tag="{Binding ElementName=TextBox4}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked"/>
-                    <TextBox Name="TextBox4" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="DarkGray" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button4_coppy"/>
+                    <TextBox Name="TextBox4" MinWidth="320" FontSize="34" Background="AntiqueWhite" />
+                    <TextBox Name="SuffixValue4"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox Margin="7,7,7,7" VerticalAlignment="Center" Tag="{Binding ElementName=TextBox5}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked"/>
-                    <TextBox Name="TextBox5" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="CadetBlue" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button5_coppy"/>
+                    <TextBox Name="TextBox5" MinWidth="320" FontSize="34" Background="MidnightBlue" Foreground="White" />
+                    <TextBox Name="SuffixValue5"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox Margin="7,7,7,7" VerticalAlignment="Center" Tag="{Binding ElementName=TextBox6}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked"/>
-                    <TextBox Name="TextBox6" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="Black" Foreground="White" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button6_coppy"/>
+                    <TextBox Name="TextBox6" MinWidth="320" FontSize="34" Background="Black" Foreground="White" />
+                    <TextBox Name="SuffixValue6"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <CheckBox Margin="7,7,7,7" VerticalAlignment="Center" Tag="{Binding ElementName=TextBox7}" Checked="LockTextBox_Checked" Unchecked="LockTextBox_Unchecked"/>
-                    <TextBox Name="TextBox7" Margin="0,0,7,0" MinWidth="400" FontSize="28" Background="Yellow" PreviewMouseLeftButtonDown="CopyText_LeftClick"/>
+                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button7_coppy"/>
+                    <TextBox Name="TextBox7" MinWidth="320" FontSize="34" Background="Yellow" />
+                    <TextBox Name="SuffixValue7"  Width="80" FontSize="34" Background="DarkOrange"/>
                 </WrapPanel>
 
 
             </Grid>
         </Border>
-
-        
-
-
-
 
 
     </Grid>
