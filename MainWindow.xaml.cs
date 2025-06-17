@@ -29,7 +29,7 @@ namespace EffingoFaciemTuam
 			TextBox5.Text = Properties.Settings.Default.SavedTextBox5;
 			TextBox6.Text = Properties.Settings.Default.SavedTextBox6;
 			TextBox7.Text = Properties.Settings.Default.SavedTextBox7;
-			#endregion 
+			#endregion
 		}
 		//saving user data to Properties.settings
 		private void OnMainWindowClose(object sender, EventArgs e)
@@ -61,5 +61,22 @@ namespace EffingoFaciemTuam
 			var textBoxPrefix = button?.Tag as TextBox; //jak zrobic zeby zbindowac wieej niz jeden element tagiem
 			Clipboard.SetText(textBox?.Text + textBoxPrefix?.Text);
 		}
+
+		/*private void HighlightText(object sender, RoutedEventArgs e)
+		{
+			((TextBox)sender).SelectAll();
+		}
+
+		private void MyTextBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+		{
+			var textbox = (TextBox)sender;
+
+			if (!textbox.IsKeyboardFocusWithin)
+			{
+				e.Handled = true; // Stop default handling
+
+				textbox.Focus();
+			}
+		}*/
 	}
 }

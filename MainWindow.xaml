@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EffingoFaciemTuam"
         mc:Ignorable="d"
+        xmlns:behaviors="clr-namespace:EffingoFaciemTuam"
         Title="MainWindow" Height="550" Width="600" HorizontalAlignment="Right" VerticalAlignment="Center"
         
         Closing="OnMainWindowClose">
@@ -43,38 +44,38 @@
 
                 <WrapPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox1}" Click="Button_Click"/>
-                    <TextBox Name="TextBox1" MinWidth="320" FontSize="34" Background="Gray" />
-                    <TextBox Name="SuffixValue1"  Width="80" FontSize="34" Background="DarkOrange" />
+                    <TextBox Name="TextBox1" MinWidth="320" FontSize="34" Background="LightGray" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <TextBox Name="SuffixValue1"  Width="80" FontSize="34" Background="LightGray" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox2}" Click="Button_Click"/>
-                    <TextBox Name="TextBox2"  MinWidth="400" FontSize="34" Background="DarkRed" />
+                    <TextBox Name="TextBox2"  MinWidth="400" FontSize="34" Background="DarkRed" behaviors:SelectAllOnFocusBehavior.Enable="True" />
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox3}" Click="Button_Click"/>
-                    <TextBox Name="TextBox3" MinWidth="400" FontSize="34" Background="DarkGreen" />
+                    <TextBox Name="TextBox3" MinWidth="400" FontSize="34" Background="DarkGreen" behaviors:SelectAllOnFocusBehavior.Enable="True" />
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox4}" Click="Button_Click"/>
-                    <TextBox Name="TextBox4" MinWidth="400" FontSize="34" Background="DarkGray" />
+                    <TextBox Name="TextBox4" MinWidth="400" FontSize="34" Background="GhostWhite" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox5}" Click="Button_Click"/>
-                    <TextBox Name="TextBox5" MinWidth="400" FontSize="34" HorizontalContentAlignment="Stretch" Background="CadetBlue" />
+                    <TextBox Name="TextBox5" MinWidth="400" FontSize="34" HorizontalContentAlignment="Stretch" Background="CadetBlue" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox6}" Click="Button_Click"/>
-                    <TextBox Name="TextBox6" MinWidth="400" FontSize="34" Background="Black" Foreground="White" />
+                    <TextBox Name="TextBox6" MinWidth="400" FontSize="34" Background="Black" Foreground="White" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox7}" Click="Button_Click"/>
-                    <TextBox Name="TextBox7" MinWidth="400" FontSize="34" Background="Yellow" />
+                    <TextBox Name="TextBox7" MinWidth="400" FontSize="34" Background="Yellow" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
 
