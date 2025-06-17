@@ -51,7 +51,7 @@ namespace EffingoFaciemTuam
 			if (!textBox.IsKeyboardFocusWithin)
 			{
 				e.Handled = true;
-				textBox.Focus(); // This will trigger GotFocus → SelectAll
+				textBox.Focus(); 
 			}
 		}
 	}
