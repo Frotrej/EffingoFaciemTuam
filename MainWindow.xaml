@@ -81,8 +81,11 @@
                 </WrapPanel>
 
 
+
             </Grid>
         </Border>
+
+        <Button Grid.Column="1" Content="chujdupa" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="45"/>
 
 
     </Grid>

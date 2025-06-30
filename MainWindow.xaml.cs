@@ -63,23 +63,6 @@ namespace EffingoFaciemTuam
 		}
 
 
-		/*private void HighlightText(object sender, RoutedEventArgs e)
-		{
-			((TextBox)sender).SelectAll();
-		}
-
-		private void MyTextBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-		{
-			var textbox = (TextBox)sender;
-
-			if (!textbox.IsKeyboardFocusWithin)
-			{
-				e.Handled = true; // Stop default handling
-
-				textbox.Focus();
-			}
-		}*/
-
 // 		#region distinguishing the number of the Coppy button clicked 
 // 		private void Button1_coppy(object sender, RoutedEventArgs e)
 // 		{
