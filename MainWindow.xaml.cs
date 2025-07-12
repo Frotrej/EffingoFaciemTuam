@@ -56,10 +56,14 @@ namespace EffingoFaciemTuam
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{
-			var button = sender as Button;
+			/*var button = sender as Button;
 			var textBox = button?.Tag as TextBox;
 			var textBoxPrefix = button?.Tag as TextBox; //jak zrobic zeby zbindowac wieej niz jeden element tagiem
-			Clipboard.SetText(textBox?.Text + textBoxPrefix?.Text);
+			Clipboard.SetText(textBox?.Text + textBoxPrefix?.Text);*/
+
+			DataHolder dataHolder = new DataHolder(this);
+			dataHolder.Get_LoadData();
+			dataHolder.CopyDataToClipboard();
 		}
 
 
