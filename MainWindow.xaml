@@ -44,43 +44,46 @@
 
                 <WrapPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
 
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox1}" Click="Button_Click"/>
+                    <Button Name="button1" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
                     <TextBox Name="TextBox1" MinWidth="320" FontSize="34" Background="LightGray" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                     <TextBox Name="SuffixValue1"  Width="80" FontSize="34" Background="LightGray" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox2}" Click="Button_Click"/>
-                    <TextBox Name="TextBox2"  MinWidth="400" FontSize="34" Background="DarkRed" behaviors:SelectAllOnFocusBehavior.Enable="True" />
+                    <Button Name="button2" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
+                    <TextBox Name="TextBox2"  MinWidth="320" FontSize="34" Background="DarkRed" behaviors:SelectAllOnFocusBehavior.Enable="True" />
+                    <TextBox Name="SuffixValue2"  Width="80" FontSize="34" Background="DarkRed" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox3}" Click="Button_Click"/>
-                    <TextBox Name="TextBox3" MinWidth="400" FontSize="34" Background="DarkGreen" behaviors:SelectAllOnFocusBehavior.Enable="True" />
+                    <Button Name="button3" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
+                    <TextBox Name="TextBox3" MinWidth="320" FontSize="34" Background="DarkGreen" behaviors:SelectAllOnFocusBehavior.Enable="True" />
+                    <TextBox Name="SuffixValue3"  Width="80" FontSize="34" Background="DarkGreen" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox4}" Click="Button_Click"/>
-                    <TextBox Name="TextBox4" MinWidth="400" FontSize="34" Background="GhostWhite" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <Button Name="button4" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
+                    <TextBox Name="TextBox4" MinWidth="320" FontSize="34" Background="GhostWhite" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <TextBox Name="SuffixValue4"  Width="80" FontSize="34" Background="GhostWhite" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox5}" Click="Button_Click"/>
-                    <TextBox Name="TextBox5" MinWidth="400" FontSize="34" HorizontalContentAlignment="Stretch" Background="CadetBlue" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <Button Name="button5" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
+                    <TextBox Name="TextBox5" MinWidth="320" FontSize="34" HorizontalContentAlignment="Stretch" Background="CadetBlue" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <TextBox Name="SuffixValue5"  Width="80" FontSize="34" Background="CadetBlue" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox6}" Click="Button_Click"/>
-                    <TextBox Name="TextBox6" MinWidth="400" FontSize="34" Background="Black" Foreground="White" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <Button Name="button6" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
+                    <TextBox Name="TextBox6" MinWidth="320" FontSize="34" Background="Black" Foreground="White" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <TextBox Name="SuffixValue6"  Width="80" FontSize="34" Background="Black" Foreground="White" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Tag="{Binding ElementName=TextBox7}" Click="Button_Click"/>
-                    <TextBox Name="TextBox7" MinWidth="400" FontSize="34" Background="Yellow" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
-
+                    <Button Name="button7" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyData"/>
+                    <TextBox Name="TextBox7" MinWidth="320" FontSize="34" Background="Yellow" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
+                    <TextBox Name="SuffixValue7"  Width="80" FontSize="34" Background="Yellow" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
-
-
 
             </Grid>
         </Border>

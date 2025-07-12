@@ -12,7 +12,7 @@ namespace EffingoFaciemTuam.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.14.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -104,6 +104,90 @@ namespace EffingoFaciemTuam.Properties {
             }
             set {
                 this["SavedTextBox7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix1 {
+            get {
+                return ((string)(this["SavedSuffix1"]));
+            }
+            set {
+                this["SavedSuffix1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix2 {
+            get {
+                return ((string)(this["SavedSuffix2"]));
+            }
+            set {
+                this["SavedSuffix2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix3 {
+            get {
+                return ((string)(this["SavedSuffix3"]));
+            }
+            set {
+                this["SavedSuffix3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix4 {
+            get {
+                return ((string)(this["SavedSuffix4"]));
+            }
+            set {
+                this["SavedSuffix4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix5 {
+            get {
+                return ((string)(this["SavedSuffix5"]));
+            }
+            set {
+                this["SavedSuffix5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix6 {
+            get {
+                return ((string)(this["SavedSuffix6"]));
+            }
+            set {
+                this["SavedSuffix6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix7 {
+            get {
+                return ((string)(this["SavedSuffix7"]));
+            }
+            set {
+                this["SavedSuffix7"] = value;
             }
         }
     }

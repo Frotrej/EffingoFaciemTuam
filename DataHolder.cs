@@ -11,7 +11,7 @@ namespace EffingoFaciemTuam
     class DataHolder
     {
         MainWindow _mainWindow;
-        static List<RowOfData> _rowsOfData = new List<RowOfData>();
+        static readonly List<RowOfData> _rowsOfData = new List<RowOfData>();
 
         public DataHolder(MainWindow mainWindow)
         {
@@ -38,17 +38,17 @@ namespace EffingoFaciemTuam
             _rowsOfData.Add(rowToAdd);
         }
 
-        public void Get_LoadData()
+        public void GetAndPassToLoadData()
         {
 			_rowsOfData.Clear();
 
-			LoadData(1, _mainWindow.TextBox1.Text, _mainWindow.TextBox1.Text);
-			LoadData(2, _mainWindow.TextBox2.Text, _mainWindow.TextBox2.Text);
-			LoadData(3, _mainWindow.TextBox3.Text, _mainWindow.TextBox3.Text);
-			LoadData(4, _mainWindow.TextBox4.Text, _mainWindow.TextBox4.Text);
-			LoadData(5, _mainWindow.TextBox5.Text, _mainWindow.TextBox5.Text);
-			LoadData(6, _mainWindow.TextBox6.Text, _mainWindow.TextBox6.Text);
-			LoadData(7, _mainWindow.TextBox7.Text, _mainWindow.TextBox7.Text);
+			LoadData(1, _mainWindow.TextBox1.Text, _mainWindow.SuffixValue1.Text);
+			LoadData(2, _mainWindow.TextBox2.Text, _mainWindow.SuffixValue2.Text);
+			LoadData(3, _mainWindow.TextBox3.Text, _mainWindow.SuffixValue3.Text);
+			LoadData(4, _mainWindow.TextBox4.Text, _mainWindow.SuffixValue4.Text);
+			LoadData(5, _mainWindow.TextBox5.Text, _mainWindow.SuffixValue5.Text);
+			LoadData(6, _mainWindow.TextBox6.Text, _mainWindow.SuffixValue6.Text);
+			LoadData(7, _mainWindow.TextBox7.Text, _mainWindow.SuffixValue7.Text);
 		}
 
         public void CopyDataToClipboard()
