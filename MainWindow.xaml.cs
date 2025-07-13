@@ -63,7 +63,6 @@ namespace EffingoFaciemTuam
 		}
 
 		/*DataHolder dataHolder = new DataHolder(this);
-		dataHolder.Get_LoadData();
 		dataHolder.CopyDataToClipboard();*/
 
 	}
