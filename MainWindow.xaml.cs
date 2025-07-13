@@ -21,10 +21,12 @@ namespace EffingoFaciemTuam
 		{
 			InitializeComponent();
 
-			DataHolder dataHolder = new DataHolder(this);
+			
 
 			//loading saved user data  from Properties.settings
 			SavingLoadingUserData.LoadUserData(this);
+
+			DataHolder.Instance.GetDataAndPassToSaveIt(this);
 		}
 
 		private void OnMainWindowClose(object sender, EventArgs e)
@@ -44,8 +46,8 @@ namespace EffingoFaciemTuam
 			if (buttonID == 0) return;
 
 
-			DataHolder dataHolder = new DataHolder(this);
-			Clipboard.SetText(dataHolder.GetRowOfData(buttonID - 1));
+			
+			Clipboard.SetText(DataHolder.Instance.GetRowOfData(buttonID - 1));
 
 		}
 
