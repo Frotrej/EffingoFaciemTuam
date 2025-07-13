@@ -10,13 +10,15 @@ namespace EffingoFaciemTuam
 {
     class DataHolder
     {
-        MainWindow _mainWindow;
-        static List<RowOfData> _rowsOfData = new List<RowOfData>();
+        
+        static readonly List<RowOfData> _rowsOfData = new List<RowOfData>();
 
         public DataHolder(MainWindow mainWindow)
         {
-            _mainWindow = mainWindow;
-        }
+            MainWindow _mainWindow = mainWindow;
+
+            GetDataAndPassToSaveIt(_mainWindow);
+		}
 
         struct RowOfData
         {
@@ -25,10 +27,8 @@ namespace EffingoFaciemTuam
             public string suffixName;
         }
 
-        private void LoadData(int id, string name, string suffix)
+        private void SaveDataToList(int id, string name, string suffix)
         {
-            
-
             RowOfData rowToAdd = new RowOfData();
 
             rowToAdd.rowId = id;
@@ -38,18 +38,26 @@ namespace EffingoFaciemTuam
             _rowsOfData.Add(rowToAdd);
         }
 
-        public void Get_LoadData()
+        public void GetDataAndPassToSaveIt(MainWindow mainWindow)
         {
 			_rowsOfData.Clear();
 
-			LoadData(1, _mainWindow.TextBox1.Text, _mainWindow.TextBox1.Text);
-			LoadData(2, _mainWindow.TextBox2.Text, _mainWindow.TextBox2.Text);
-			LoadData(3, _mainWindow.TextBox3.Text, _mainWindow.TextBox3.Text);
-			LoadData(4, _mainWindow.TextBox4.Text, _mainWindow.TextBox4.Text);
-			LoadData(5, _mainWindow.TextBox5.Text, _mainWindow.TextBox5.Text);
-			LoadData(6, _mainWindow.TextBox6.Text, _mainWindow.TextBox6.Text);
-			LoadData(7, _mainWindow.TextBox7.Text, _mainWindow.TextBox7.Text);
+			SaveDataToList(1, mainWindow.TextBox1.Text, mainWindow.SuffixValue1.Text);
+			SaveDataToList(2, mainWindow.TextBox2.Text, mainWindow.SuffixValue2.Text);
+			SaveDataToList(3, mainWindow.TextBox3.Text, mainWindow.SuffixValue3.Text);
+			SaveDataToList(4, mainWindow.TextBox4.Text, mainWindow.SuffixValue4.Text);
+			SaveDataToList(5, mainWindow.TextBox5.Text, mainWindow.SuffixValue5.Text);
+			SaveDataToList(6, mainWindow.TextBox6.Text, mainWindow.SuffixValue6.Text);
+			SaveDataToList(7, mainWindow.TextBox7.Text, mainWindow.SuffixValue7.Text);
 		}
+
+        public string GetRowOfData(int id)
+        {
+            RowOfData row = new RowOfData();
+            row = _rowsOfData[id];
+
+            return ($"{row.rowId}: {row.mainName}{row.suffixName}");
+        }
 
         public void CopyDataToClipboard()
         {
@@ -57,7 +65,7 @@ namespace EffingoFaciemTuam
 			
 			foreach (var item in _rowsOfData)
 			{
-				copy += ($"Mlyn: {item.rowId} ({item.mainName}{item.suffixName})\n");
+				copy += ($"Mlyn: {item.rowId}: {item.mainName}{item.suffixName}\n");
 			}
 
 			Clipboard.SetText(copy);
