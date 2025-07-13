@@ -21,6 +21,8 @@ namespace EffingoFaciemTuam
 		{
 			InitializeComponent();
 
+			DataHolder dataHolder = new DataHolder(this);
+
 			//loading saved user data  from Properties.settings
 			SavingLoadingUserData.LoadUserData(this);
 		}
@@ -36,18 +38,28 @@ namespace EffingoFaciemTuam
 			this.Topmost = !this.Topmost;
 		}
 
-		private void Button_Click_CopyData(object sender, RoutedEventArgs e)
+		private void Button_Click_CopyDataBasedOnID(object sender, RoutedEventArgs e)
 		{
-			Button button = sender as Button;
-			string buttonName = button.Name;
-			if (buttonName == null) return;
+			int buttonID = ExtractButtonIDFromItsName(sender);
+			if (buttonID == 0) return;
 
+
+			DataHolder dataHolder = new DataHolder(this);
+			Clipboard.SetText(dataHolder.GetRowOfData(buttonID - 1));
+
+		}
+
+		private int ExtractButtonIDFromItsName(object sender)
+		{
+			Button? button = sender as Button;
+			string? buttonName = button?.Name;
+
+			if (buttonName == null)  return 0;
 			char buttonNameLastChar = buttonName.LastOrDefault();
-			if (char.IsDigit(buttonNameLastChar) == false) return;
-			int id = int.Parse(buttonNameLastChar.ToString());
 
-			Clipboard.SetText(id.ToString());
-
+			if (char.IsDigit(buttonNameLastChar) == false) return 0;
+			int buttonID = int.Parse(buttonNameLastChar.ToString());
+			return buttonID;
 		}
 
 		/*DataHolder dataHolder = new DataHolder(this);
