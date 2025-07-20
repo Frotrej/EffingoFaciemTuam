@@ -1,27 +1,15 @@
 ﻿using EffingoFaciemTuam.HandlingUserData;
-using System.Text;
+using EffingoFaciemTuam.SharpHookImplementation;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace EffingoFaciemTuam
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
 		public MainWindow()
 		{
 			InitializeComponent();
-
-			
 
 			//loading saved user data  from Properties.settings
 			SavingLoadingUserData.LoadUserData(this);
@@ -45,7 +33,6 @@ namespace EffingoFaciemTuam
 			int buttonID = ExtractButtonIDFromItsName(sender);
 			if (buttonID == 0) return;
 
-
 			
 			Clipboard.SetText(DataHolder.Instance.GetRowOfData(buttonID - 1));
 
@@ -64,8 +51,13 @@ namespace EffingoFaciemTuam
 			return buttonID;
 		}
 
-		/*DataHolder dataHolder = new DataHolder(this);
-		dataHolder.CopyDataToClipboard();*/
+		private async void GetMousexyOnNextMouseClick(object sender, RoutedEventArgs e)
+		{
+			SharphookMouse sharphookMouse = new SharphookMouse();
 
+			sharphookMouse.SetMousePositionOnFirstMouseClick();
+
+			Clipboard.SetText($"X:{sharphookMouse.coordinatesX}, Y:{sharphookMouse.coordinatesY}");
+		}
 	}
 }
