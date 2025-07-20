@@ -30,8 +30,6 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 
 			}
 			while (coordinatesY == 0 && coordinatesX == 0);
-
-			hook.Dispose();
 		}
 	}
 }
