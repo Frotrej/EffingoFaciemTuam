@@ -51,7 +51,7 @@ namespace EffingoFaciemTuam
 			return buttonID;
 		}
 
-		private async void GetMousexyOnNextMouseClick(object sender, RoutedEventArgs e)
+		private void GetMousexyOnNextMouseClick(object sender, RoutedEventArgs e)
 		{
 			SharphookMouse sharphookMouse = new SharphookMouse();
 

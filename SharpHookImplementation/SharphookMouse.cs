@@ -10,7 +10,7 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 		public int coordinatesX = 0;
 		public int coordinatesY = 0;
 
-	
+
 		public void SetMousePositionOnFirstMouseClick()
 		{
 			hook.MouseClicked += (sender, e) =>
@@ -27,20 +27,11 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 			coordinatesY = 0;
 			do
 			{
-				
+
 			}
 			while (coordinatesY == 0 && coordinatesX == 0);
 
 			hook.Dispose();
 		}
-
-		/*public void OnMouseClicked(object? sender, MouseHookEventArgs e)
-		{
-			coordinatesX = e.Data.X;
-			coordinatesY = e.Data.Y;
-
-			hook.Dispose();
-		}*/
-
 	}
 }
