@@ -6,21 +6,22 @@
         xmlns:local="clr-namespace:EffingoFaciemTuam"
         mc:Ignorable="d"
         xmlns:behaviors="clr-namespace:EffingoFaciemTuam"
-        Title="MainWindow" Height="550" Width="600" HorizontalAlignment="Right" VerticalAlignment="Center"
+        Title="MainWindow" Height="550" Width="630" HorizontalAlignment="Right" VerticalAlignment="Center"
         
         Closing="OnMainWindowClose">
+
+
+
     <Grid>
-
-
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
             <RowDefinition Height="0.9*"/>
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.05*"/>
             <ColumnDefinition Width="0.9*"/>
-            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="0.15*"/>
         </Grid.ColumnDefinitions>
 
 
@@ -29,8 +30,8 @@
             <Label Content="zablokuj" HorizontalAlignment="Center"/>
         </WrapPanel>
 
-
-        <Border Grid.Column="1" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="1"  Margin="0,49,0,0" Grid.RowSpan="2">
+        <!--section with main text boxes-->
+        <Border Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" BorderBrush="Black" BorderThickness="1" Grid.RowSpan="1">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -44,43 +45,43 @@
 
                 <WrapPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
 
-                    <Button Name="button1" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton1" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox1" Width="320" FontSize="34" Background="LightGray" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                     <TextBox Name="SuffixValue1"  Width="80" FontSize="34" Background="LightGray" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                    <Button Name="button2" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton2" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox2"  Width="320" FontSize="34" Background="DarkRed" behaviors:SelectAllOnFocusBehavior.Enable="True" />
                     <TextBox Name="SuffixValue2"  Width="80" FontSize="34" Background="DarkRed" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Name="button3" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton3" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox3" Width="320" FontSize="34" Background="DarkGreen" behaviors:SelectAllOnFocusBehavior.Enable="True" />
                     <TextBox Name="SuffixValue3"  Width="80" FontSize="34" Background="DarkGreen" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Name="button4" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton4" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox4" Width="320" FontSize="34" Background="GhostWhite" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                     <TextBox Name="SuffixValue4"  Width="80" FontSize="34" Background="GhostWhite" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Name="button5" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton5" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox5" Width="320" FontSize="34" HorizontalContentAlignment="Stretch" Background="CadetBlue" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                     <TextBox Name="SuffixValue5"  Width="80" FontSize="34" Background="CadetBlue" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="5" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Name="button6" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton6" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox6" Width="320" FontSize="34" Background="Black" Foreground="White" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                     <TextBox Name="SuffixValue6"  Width="80" FontSize="34" Background="Black" Foreground="White" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
 
                 <WrapPanel Grid.Row="6" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Button Name="button7" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
+                    <Button Name="CopyButton7" Content="Kopiuj" VerticalAlignment="Center" Height="50" Width="64" Click="Button_Click_CopyDataBasedOnID"/>
                     <TextBox Name="TextBox7" Width="320" FontSize="34" Background="Yellow" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                     <TextBox Name="SuffixValue7"  Width="80" FontSize="34" Background="Yellow" behaviors:SelectAllOnFocusBehavior.Enable="True"/>
                 </WrapPanel>
@@ -88,8 +89,45 @@
             </Grid>
         </Border>
 
-        <Button Grid.Column="1" Content="chujdupa" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Height="30" Width="45" Click="GetMousexyOnNextMouseClick"/>
+        <!--section with buttons to automatically start measuring process-->
+        <Border Grid.Column="2" Grid.Row="1" BorderThickness="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
+                <Button Grid.Row="0" Name="SimulateButton1" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="1" Name="SimulateButton2" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="2" Name="SimulateButton3" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="3" Name="SimulateButton4" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="4" Name="SimulateButton5" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="5" Name="SimulateButton6" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="6" Name="SimulateButton7" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+            </Grid>
+        </Border>
+
+        <Button Content="chujdupa" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Height="30" Width="45" Click="GetMousexyOnNextMouseClick" Margin="0,5,0,0" />
+
+
+        <DockPanel Grid.ColumnSpan="3" >
+            <Menu DockPanel.Dock="Top" Background="White" BorderThickness="0,0,0,1" BorderBrush="black">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open"/>
+                    <MenuItem Header="_Close"/>
+                    <MenuItem Header="_Save"/>
+                </MenuItem>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
 
     </Grid>
+    
+    
+    
 </Window>
