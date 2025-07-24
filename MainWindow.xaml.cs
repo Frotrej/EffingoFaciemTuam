@@ -61,7 +61,7 @@ namespace EffingoFaciemTuam
 			Clipboard.SetText($"X:{sharphookMouse.coordinatesX}, Y:{sharphookMouse.coordinatesY}");
 		}
 
-		private void OpenWindow_SequenceManagement()
+		private void OpenWindow_SequenceManagement(object sender, RoutedEventArgs e)
 		{
 			SequenceManagement _window = new SequenceManagement();
 			_window.Show();
