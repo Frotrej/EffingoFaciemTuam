@@ -1,5 +1,6 @@
 ﻿using EffingoFaciemTuam.HandlingUserData;
 using EffingoFaciemTuam.SharpHookImplementation;
+using EffingoFaciemTuam.Windows;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -14,7 +15,7 @@ namespace EffingoFaciemTuam
 			//loading saved user data  from Properties.settings
 			SavingLoadingUserData.LoadUserData(this);
 
-			DataHolder.Instance.GetDataAndPassToSaveIt(this);
+			UserEntryDataHolder.Instance.LoadDataFromView(this);
 		}
 
 		private void OnMainWindowClose(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace EffingoFaciemTuam
 			if (buttonID == 0) return;
 
 			
-			Clipboard.SetText(DataHolder.Instance.GetRowOfData(buttonID - 1));
+			Clipboard.SetText(UserEntryDataHolder.Instance.GetRowOfData(buttonID - 1));
 
 		}
 
@@ -59,5 +60,12 @@ namespace EffingoFaciemTuam
 
 			Clipboard.SetText($"X:{sharphookMouse.coordinatesX}, Y:{sharphookMouse.coordinatesY}");
 		}
+
+		private void OpenWindow_SequenceManagement()
+		{
+			SequenceManagement _window = new SequenceManagement();
+			_window.Show();
+		}
+	
 	}
 }

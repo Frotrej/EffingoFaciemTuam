@@ -118,9 +118,7 @@
         <DockPanel Grid.ColumnSpan="3" >
             <Menu DockPanel.Dock="Top" Background="White" BorderThickness="0,0,0,1" BorderBrush="black">
                 <MenuItem Header="_File">
-                    <MenuItem Header="_Open"/>
-                    <MenuItem Header="_Close"/>
-                    <MenuItem Header="_Save"/>
+                    <MenuItem Header="Open"/>
                 </MenuItem>
             </Menu>
             <StackPanel></StackPanel>
