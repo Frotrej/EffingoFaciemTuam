@@ -8,10 +8,17 @@ namespace EffingoFaciemTuam.Model
 {
 	class SequenceElement
 	{
-		string typ { get; set; }
-		char keyboardKey { get; set; }
-		int mouseX { get; set; }
-		int mouseY { get; set; }
+		string Typ { get; set; }
+		char KeyboardKey { get; set; }
+		int MouseX { get; set; }
+		int MouseY { get; set; }
 
+		public SequenceElement()
+		{
+			Typ = "Typ";
+			KeyboardKey = 'a';
+			MouseX = 0;
+			MouseY = 0;
+		}
 	}
 }

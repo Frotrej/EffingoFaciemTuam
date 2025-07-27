@@ -13,12 +13,17 @@
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
+        <ListView Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center"  Width="340" ItemsSource="{Binding Sequence}">
+            
+        </ListView>
 
-        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20"/>
+        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click"/>
         <Button Content="-" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20"/>
 
         <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
+        
+        
 
 
 

@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using EffingoFaciemTuam.Model;
+using System.Collections.ObjectModel;
+using System.DirectoryServices;
+using System.Windows;
 
 namespace EffingoFaciemTuam.Windows
 {
@@ -9,13 +12,29 @@ namespace EffingoFaciemTuam.Windows
     {
         public SequenceManagement()
         {
+            DataContext = this;
+            sequence = new ObservableCollection<String>();
             InitializeComponent();
         }
 
+		private ObservableCollection<String> sequence = new();
+
+		public ObservableCollection<String> Sequence
+		{
+			get { return sequence; }
+			set { sequence = value; }
+		}
 
 		private void CloseWindow(object sender, RoutedEventArgs e)
 		{
             Close();
+		}
+
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+            Sequence.Add("entry to list");
+
+            
 		}
 	}
 }

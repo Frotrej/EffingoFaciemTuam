@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 
 namespace EffingoFaciemTuam.Model
 {
-    class SequenceModel
-    {
-        public ObservableCollection<SequenceElement> Sequence { get; set; }
+	class SequenceModel
+	{
 
-    }
+		private ObservableCollection<SequenceElement> sequence = new ObservableCollection<SequenceElement>();
+
+		public ObservableCollection<SequenceElement> Sequence
+		{
+			get { return sequence; }
+			set { sequence = value; }
+		}
+
+		public void AddElementToSequence(SequenceElement element) { Sequence.Add(element); }
+		public void RemoveElementFromSequence(SequenceElement element) { Sequence.Remove(element); }
+	}
 }
