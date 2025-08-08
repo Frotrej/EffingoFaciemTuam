@@ -5,36 +5,43 @@ using System.Windows;
 
 namespace EffingoFaciemTuam.Windows
 {
-    /// <summary>
-    /// Logika interakcji dla klasy SequenceManagement.xaml
-    /// </summary>
-    public partial class SequenceManagement : Window
-    {
-        public SequenceManagement()
-        {
-            DataContext = this;
-            sequence = new ObservableCollection<String>();
-            InitializeComponent();
-        }
+	public partial class SequenceManagement : Window
+	{
+		public ObservableCollection<SequenceElement> Elements { get; set; }
 
-		private ObservableCollection<String> sequence = new();
-
-		public ObservableCollection<String> Sequence
+		public SequenceManagement()
 		{
-			get { return sequence; }
-			set { sequence = value; }
+			InitializeComponent();
+			Elements = new ObservableCollection<SequenceElement>
+			{
+				new SequenceElement(),
+				new SequenceElement()
+			};
+
+			DataContext = this;
+
 		}
 
 		private void CloseWindow(object sender, RoutedEventArgs e)
 		{
-            Close();
+			Close();
 		}
 
-		private void Button_Click(object sender, RoutedEventArgs e)
+		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-            Sequence.Add("entry to list");
+			SequenceElement element = new();
+			Elements.Add(element);
+		}
 
-            
+		private void Button_Click_RemoveElement(object sender, RoutedEventArgs e)
+		{
+			if (Elements.Count <= 0)
+			{
+				MessageBox.Show("Brak elementów do usunięcia.");
+				return;
+			}
+			Elements.RemoveAt(Elements.Count - 1);
+
 		}
 	}
 }

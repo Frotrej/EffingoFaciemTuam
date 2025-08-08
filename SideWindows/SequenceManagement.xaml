@@ -13,12 +13,19 @@
             <RowDefinition Height="0.1*"/>
         </Grid.RowDefinitions>
 
-        <ListView Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center"  Width="340" ItemsSource="{Binding Sequence}">
-            
+        <ListView Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center"  Width="340" ItemsSource="{Binding Elements}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Tyyp" DisplayMemberBinding="{Binding Typ}" />
+                    <GridViewColumn Header="Key" DisplayMemberBinding="{Binding KeyboardKey}" />
+                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding MouseX}" />
+                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding MouseY}" />
+                </GridView>
+            </ListView.View>
         </ListView>
 
-        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click"/>
-        <Button Content="-" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20"/>
+        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_AddElement"/>
+        <Button Content="-" Name="ButtonRemoveElement" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_RemoveElement"/>
 
         <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
