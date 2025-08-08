@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace EffingoFaciemTuam.Model
 {
-	class SequenceElement
+	public class SequenceElement
 	{
-		string Typ { get; set; }
-		char KeyboardKey { get; set; }
-		int MouseX { get; set; }
-		int MouseY { get; set; }
+		public string Typ { get; set; }
+		public char KeyboardKey { get; set; }
+		public int MouseX { get; set; }
+		public int MouseY { get; set; }
 
 		public SequenceElement()
 		{
