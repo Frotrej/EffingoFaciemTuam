@@ -64,8 +64,7 @@ namespace EffingoFaciemTuam
 		private void OpenWindow_SequenceManagement(object sender, RoutedEventArgs e)
 		{
 			SequenceManagement _window = new SequenceManagement();
-			_window.Show();
+			_window.ShowDialog();
 		}
-	
 	}
 }
