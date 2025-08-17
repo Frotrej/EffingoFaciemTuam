@@ -17,9 +17,7 @@ namespace EffingoFaciemTuam.Windows
 				new SequenceElement(),
 				new SequenceElement()
 			};
-
 			DataContext = this;
-
 		}
 
 		private void CloseWindow(object sender, RoutedEventArgs e)
@@ -41,7 +39,6 @@ namespace EffingoFaciemTuam.Windows
 				return;
 			}
 			Elements.RemoveAt(Elements.Count - 1);
-
 		}
 	}
 }

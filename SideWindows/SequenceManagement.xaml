@@ -16,10 +16,10 @@
         <ListView Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center"  Width="340" ItemsSource="{Binding Elements}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Tyyp" DisplayMemberBinding="{Binding Typ}" />
-                    <GridViewColumn Header="Key" DisplayMemberBinding="{Binding KeyboardKey}" />
-                    <GridViewColumn Header="X" DisplayMemberBinding="{Binding MouseX}" />
-                    <GridViewColumn Header="Y" DisplayMemberBinding="{Binding MouseY}" />
+                    <GridViewColumn Header="Akcja" DisplayMemberBinding="{Binding Typ}" Width="100"/>
+                    <GridViewColumn Header="Klawiatura" DisplayMemberBinding="{Binding KeyboardKey}" Width="70" />
+                    <GridViewColumn Header="MyszX" DisplayMemberBinding="{Binding MouseX}" Width="50"/>
+                    <GridViewColumn Header="MyszY" DisplayMemberBinding="{Binding MouseY}" Width="50"/>
                 </GridView>
             </ListView.View>
         </ListView>
@@ -30,10 +30,6 @@
         <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
         
-        
-
-
-
 
     </Grid>
 </Window>
