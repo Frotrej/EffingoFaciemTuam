@@ -4,6 +4,10 @@ using EffingoFaciemTuam.Windows;
 using System.Windows;
 using System.Windows.Controls;
 
+
+/*przy obecnym wygladazie aplikacji dane z pól tekstowych nie zapisuja sie automatycznie przy kazdorazowej zmianie tego pola, na czas opecny rozwiazaniem jest code behind ktory wywoluje metode do zapisania danych w zmiennych za pomoca "UserEntryDataHolder.Instance.LoadDataFromView(this);" 
+ */
+
 namespace EffingoFaciemTuam
 {
 	public partial class MainWindow : Window
@@ -34,9 +38,9 @@ namespace EffingoFaciemTuam
 			int buttonID = ExtractButtonIDFromItsName(sender);
 			if (buttonID == 0) return;
 
-			
-			Clipboard.SetText(UserEntryDataHolder.Instance.GetRowOfData(buttonID - 1));
+			UserEntryDataHolder.Instance.LoadDataFromView(this);
 
+			Clipboard.SetText(UserEntryDataHolder.Instance.GetRowOfData(buttonID - 1));
 		}
 
 		private int ExtractButtonIDFromItsName(object sender)

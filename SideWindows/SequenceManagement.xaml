@@ -30,10 +30,6 @@
         <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
         
-        
-
-
-
 
     </Grid>
 </Window>
