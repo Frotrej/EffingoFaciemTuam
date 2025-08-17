@@ -15,7 +15,6 @@ namespace EffingoFaciemTuam.Windows
 			Elements = new ObservableCollection<SequenceElement>
 			{
 				new SequenceElement(),
-				new SequenceElement()
 			};
 			DataContext = this;
 		}
