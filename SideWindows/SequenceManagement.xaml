@@ -15,12 +15,15 @@
 
 
         <DataGrid Grid.Row="0" HorizontalAlignment="Center" Width="340" ItemsSource="{Binding Elements}">
-            <DataGrid.Columns>
+            
+          <!--
+          <DataGrid.Columns>
                 <DataGridTextColumn Header="Typ" Binding="{Binding Typ}" Width="100"></DataGridTextColumn>
                 <DataGridTextColumn Header="Klawiatura" Binding="{Binding KeyboardKey}" Width="70"></DataGridTextColumn>
                 <DataGridTextColumn Header="MyszX" Binding="{Binding MouseX}" Width="50"></DataGridTextColumn>
                 <DataGridTextColumn Header="MyszY" Binding="{Binding MouseY}" Width="50"></DataGridTextColumn>
             </DataGrid.Columns>
+            -->
             
         </DataGrid>
 
