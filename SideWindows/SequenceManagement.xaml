@@ -6,34 +6,34 @@
         xmlns:local="clr-namespace:EffingoFaciemTuam.Windows"
         mc:Ignorable="d"
         Title="SequenceManagement" Height="450" Width="498">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.82*"/>
-            <RowDefinition Height="0.08*"/>
-            <RowDefinition Height="0.1*"/>
-        </Grid.RowDefinitions>
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="0.82*"/>
+      <RowDefinition Height="0.08*"/>
+      <RowDefinition Height="0.1*"/>
+    </Grid.RowDefinitions>
 
 
-        <DataGrid Grid.Row="0" HorizontalAlignment="Center" Width="340" ItemsSource="{Binding Elements}">
-            
-          <!--
-          <DataGrid.Columns>
-                <DataGridTextColumn Header="Typ" Binding="{Binding Typ}" Width="100"></DataGridTextColumn>
-                <DataGridTextColumn Header="Klawiatura" Binding="{Binding KeyboardKey}" Width="70"></DataGridTextColumn>
-                <DataGridTextColumn Header="MyszX" Binding="{Binding MouseX}" Width="50"></DataGridTextColumn>
-                <DataGridTextColumn Header="MyszY" Binding="{Binding MouseY}" Width="50"></DataGridTextColumn>
-            </DataGrid.Columns>
-            -->
-            
-        </DataGrid>
+    <DataGrid Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center" Width="340" ItemsSource="{Binding Elements}" AutoGenerateColumns="False" CanUserSortColumns="False">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="NumerKroku" Binding="{Binding StepNumber}"/>
 
-
-        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_AddElement"/>
-        <Button Content="-" Name="ButtonRemoveElement" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_RemoveElement"/>
-
-        <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
-        <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
+        <DataGridTemplateColumn Header="Typ"/>
         
+        <DataGridTextColumn Header="Typ" Binding="{Binding Type}"/>
+        <DataGridTextColumn Header="Klawiatura" Binding="{Binding KeyboardKey}"/>
+        <DataGridTextColumn Header="MyszX" Binding="{Binding MouseX}"/>
+        <DataGridTextColumn Header="MyszY" Binding="{Binding MouseY}"/>
+      </DataGrid.Columns>
+    </DataGrid>
 
-    </Grid>
+
+    <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_AddElement"/>
+    <Button Content="-" Name="ButtonRemoveElement" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_RemoveElement"/>
+
+    <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
+    <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
+
+
+  </Grid>
 </Window>

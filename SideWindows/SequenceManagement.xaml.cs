@@ -12,6 +12,7 @@ namespace EffingoFaciemTuam.Windows
 		public SequenceManagement()
 		{
 			InitializeComponent();
+
 			Elements = new ObservableCollection<SequenceElement>
 			{
 				new SequenceElement(),
@@ -27,6 +28,7 @@ namespace EffingoFaciemTuam.Windows
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
 			SequenceElement element = new();
+			element.StepNumber = Elements.Count + 1;
 			Elements.Add(element);
 		}
 
