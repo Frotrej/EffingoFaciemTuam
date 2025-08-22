@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows;
 
 namespace EffingoFaciemTuam
 {
-	class DataHolder
+	class UserEntryDataHolder
 	{
-		private static readonly DataHolder _instance = new DataHolder();
+		private static readonly UserEntryDataHolder _instance = new UserEntryDataHolder();
 
-		static DataHolder() { }
-		private DataHolder() { }
-		public static DataHolder Instance {  get { return _instance; } }
+		static UserEntryDataHolder() { }
+		private UserEntryDataHolder() { }
+		public static UserEntryDataHolder Instance {  get { return _instance; } }
 
 		private List<RowOfData> _rowsOfData = new List<RowOfData>();
 
@@ -36,7 +30,7 @@ namespace EffingoFaciemTuam
 			_rowsOfData.Add(rowToAdd);
 		}
 
-		public void GetDataAndPassToSaveIt(MainWindow mainWindow)
+		public void LoadDataFromView(MainWindow mainWindow)
 		{
 			_rowsOfData.Clear();
 
@@ -57,6 +51,7 @@ namespace EffingoFaciemTuam
 			return ($"{row.rowId}: {row.mainName}{row.suffixName}");
 		}
 
+		//not in use
 		public void CopyDataToClipboard()
 		{
 			string copy = "";

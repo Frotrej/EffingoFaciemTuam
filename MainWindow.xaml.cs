@@ -1,7 +1,12 @@
 ﻿using EffingoFaciemTuam.HandlingUserData;
 using EffingoFaciemTuam.SharpHookImplementation;
+using EffingoFaciemTuam.Windows;
 using System.Windows;
 using System.Windows.Controls;
+
+
+/*przy obecnym wygladazie aplikacji dane z pól tekstowych nie zapisuja sie automatycznie przy kazdorazowej zmianie tego pola, na czas opecny rozwiazaniem jest code behind ktory wywoluje metode do zapisania danych w zmiennych za pomoca "UserEntryDataHolder.Instance.LoadDataFromView(this);" 
+ */
 
 namespace EffingoFaciemTuam
 {
@@ -14,7 +19,7 @@ namespace EffingoFaciemTuam
 			//loading saved user data  from Properties.settings
 			SavingLoadingUserData.LoadUserData(this);
 
-			DataHolder.Instance.GetDataAndPassToSaveIt(this);
+			UserEntryDataHolder.Instance.LoadDataFromView(this);
 		}
 
 		private void OnMainWindowClose(object sender, EventArgs e)
@@ -33,9 +38,9 @@ namespace EffingoFaciemTuam
 			int buttonID = ExtractButtonIDFromItsName(sender);
 			if (buttonID == 0) return;
 
-			
-			Clipboard.SetText(DataHolder.Instance.GetRowOfData(buttonID - 1));
+			UserEntryDataHolder.Instance.LoadDataFromView(this);
 
+			Clipboard.SetText(UserEntryDataHolder.Instance.GetRowOfData(buttonID - 1));
 		}
 
 		private int ExtractButtonIDFromItsName(object sender)
@@ -58,6 +63,12 @@ namespace EffingoFaciemTuam
 			sharphookMouse.SetMousePositionOnFirstMouseClick();
 
 			Clipboard.SetText($"X:{sharphookMouse.coordinatesX}, Y:{sharphookMouse.coordinatesY}");
+		}
+
+		private void OpenWindow_SequenceManagement(object sender, RoutedEventArgs e)
+		{
+			SequenceManagement _window = new SequenceManagement();
+			_window.ShowDialog();
 		}
 	}
 }
