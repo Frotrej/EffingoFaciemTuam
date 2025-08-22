@@ -10,9 +10,6 @@
         Closing="OnMainWindowClose">
 
     <Grid>
-
-
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="0.07*"/>

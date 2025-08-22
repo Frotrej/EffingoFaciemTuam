@@ -41,5 +41,26 @@ namespace EffingoFaciemTuam.Windows
 			}
 			Elements.RemoveAt(Elements.Count - 1);
 		}
+
+		private void Button_Click_TestSequence(object sender, RoutedEventArgs e)
+		{
+			foreach (var element in Elements)
+			{
+				if (element.Type == SequenceElement.ElementType.Klawiatura)
+					ExecuteKeyboardSequenceElement(element);
+				if (element.Type == SequenceElement.ElementType.Mysz)
+					ExecuteMouseSequenceElement(element);
+			}
+		}
+
+		private void ExecuteMouseSequenceElement(SequenceElement element)
+		{
+			// simulate mouse action in sharphook based on element
+		}
+		private void ExecuteKeyboardSequenceElement(SequenceElement element)
+		{
+			//simualte keyboard action in sharphook based on element
+		}
+
 	}
 }
