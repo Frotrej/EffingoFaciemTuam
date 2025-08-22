@@ -8,28 +8,29 @@ namespace EffingoFaciemTuam.Model
 {
 	public class SequenceElement
 	{
-		public int StepNumber { get; set; }	
+		public int StepNumber { get; set; }
 		public int Delay { get; set; }
-		public string Type { get; set; }
+		public ElementType Type { get; set; }
 		public char KeyboardKey { get; set; }
 		public int MouseX { get; set; }
 		public int MouseY { get; set; }
+
+		public enum ElementType
+		{
+			Klawiatura, //keyboard
+			Mysz //mouse
+		};
+
+		public static Array StepTypes => Enum.GetValues(typeof(ElementType));
 
 		public SequenceElement()
 		{
 			StepNumber = 1;
 			Delay = 100;
-			Type = "Typ";
+			Type = ElementType.Klawiatura;
 			KeyboardKey = 'a';
 			MouseX = 0;
 			MouseY = 0;
-		}
-
-		enum ElementType
-		{
-			Keyboard,
-			Mouse,
-			Delay
 		}
 	}
 }

@@ -4,8 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EffingoFaciemTuam.Windows"
+        xmlns:models="clr-namespace:EffingoFaciemTuam.Model"
         mc:Ignorable="d"
         Title="SequenceManagement" Height="450" Width="498">
+
+  
   <Grid>
     <Grid.RowDefinitions>
       <RowDefinition Height="0.82*"/>
@@ -14,13 +17,22 @@
     </Grid.RowDefinitions>
 
 
-    <DataGrid Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center" Width="340" ItemsSource="{Binding Elements}" AutoGenerateColumns="False" CanUserSortColumns="False">
+    <DataGrid x:Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center" Width="340" ItemsSource="{Binding Elements}" AutoGenerateColumns="False" CanUserSortColumns="False" >
+
       <DataGrid.Columns>
         <DataGridTextColumn Header="NumerKroku" Binding="{Binding StepNumber}"/>
-
-        <DataGridTemplateColumn Header="Typ"/>
-        
-        <DataGridTextColumn Header="Typ" Binding="{Binding Type}"/>
+        <DataGridTemplateColumn Header="Typ">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding Path=Type}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+          <DataGridTemplateColumn.CellEditingTemplate>
+            <DataTemplate>
+              <ComboBox ItemsSource="{x:Static models:SequenceElement.StepTypes}" SelectedItem="{Binding Type, Mode=TwoWay}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellEditingTemplate>
+        </DataGridTemplateColumn>
         <DataGridTextColumn Header="Klawiatura" Binding="{Binding KeyboardKey}"/>
         <DataGridTextColumn Header="MyszX" Binding="{Binding MouseX}"/>
         <DataGridTextColumn Header="MyszY" Binding="{Binding MouseY}"/>
