@@ -57,10 +57,23 @@ namespace EffingoFaciemTuam.Windows
 		{
 			// simulate mouse action in sharphook based on element
 		}
+
 		private void ExecuteKeyboardSequenceElement(SequenceElement element)
 		{
 			//simualte keyboard action in sharphook based on element
 		}
 
+		private void GetValuesFromUserForSequenceElement(SequenceElement element)
+		{
+			if (element.Type == SequenceElement.ElementType.Klawiatura)
+			{
+				//get values for keyboard element
+				//1 ask user for type of input (char, string, shortcut combination
+			}
+			if (element.Type == SequenceElement.ElementType.Mysz)
+			{
+				//get values for mouse element
+			}
+		}
 	}
 }
