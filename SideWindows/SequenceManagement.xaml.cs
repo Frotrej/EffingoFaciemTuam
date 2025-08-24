@@ -1,4 +1,5 @@
 ﻿using EffingoFaciemTuam.Model;
+using EffingoFaciemTuam.SideWindows;
 using System.Collections.ObjectModel;
 using System.DirectoryServices;
 using System.Windows;
@@ -27,9 +28,11 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			SequenceElement element = new();
+			/*SequenceElement element = new();
 			element.StepNumber = Elements.Count + 1;
-			Elements.Add(element);
+			Elements.Add(element);*/
+			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp();
+			_window.ShowDialog();
 		}
 
 		private void Button_Click_RemoveElement(object sender, RoutedEventArgs e)

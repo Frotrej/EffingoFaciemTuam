@@ -14,14 +14,28 @@ using System.Windows.Shapes;
 
 namespace EffingoFaciemTuam.SideWindows
 {
-	/// <summary>
-	/// Logika interakcji dla klasy GetKeyboardDataFromUserPopUp.xaml
-	/// </summary>
 	public partial class GetKeyboardDataFromUserPopUp : Window
 	{
 		public GetKeyboardDataFromUserPopUp()
 		{
 			InitializeComponent();
+
+			
+		}
+
+		private void CloseWindow(object sender, RoutedEventArgs e)
+		{
+			Close();
+			//dodac anulowanie procesu dodawania elementu
+		}
+
+		private void Button_Click_GetCoordinatesForElement(object sender, RoutedEventArgs e)
+		{
+			SharpHookImplementation.SharphookMouse sharphookMouse = new();
+			sharphookMouse.SetMousePositionOnFirstMouseClick();
+			int X = sharphookMouse.coordinatesX;
+			int Y = sharphookMouse.coordinatesY;
+			//nie dziala znalezc lepsze rozwiazanie
 		}
 	}
 }
