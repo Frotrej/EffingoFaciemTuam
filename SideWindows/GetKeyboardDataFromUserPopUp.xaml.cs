@@ -18,7 +18,7 @@ namespace EffingoFaciemTuam.SideWindows
 			//dodac anulowanie procesu dodawania elementu
 		}
 
-		private void Button_Click_GetCoordinatesForElement(object sender, RoutedEventArgs e)
+		private void Button_Click_StartTrackMouseUntilClick(object sender, RoutedEventArgs e)
 		{
 			SharpHookImplementation.SharphookMouse sharphookMouse = new();
 			sharphookMouse.SetMousePositionOnFirstMouseClick(UpdateUI);
@@ -28,8 +28,15 @@ namespace EffingoFaciemTuam.SideWindows
 
 		public void UpdateUI(int x, int y)
 		{
-			TextBlockXcoord.Text = $"X: {x}";
-			TextBlockYcoord.Text = $"Y: {y}";
+			if (Dispatcher.CheckAccess())
+			{
+				TextBlockXcoord.Text = $"X: {x}";
+				TextBlockYcoord.Text = $"Y: {y}";
+			}
+			else
+			{
+				Dispatcher.Invoke(() => UpdateUI(x, y));
+			}
 		}
 	}
 }
