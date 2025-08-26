@@ -1,6 +1,7 @@
 ﻿using EffingoFaciemTuam.SideWindows;
 using SharpHook;
 using System.Windows;
+using static EffingoFaciemTuam.SideWindows.GetKeyboardDataFromUserPopUp;
 
 namespace EffingoFaciemTuam.SharpHookImplementation
 {
@@ -12,12 +13,14 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 		public int coordinatesY = 0;
 
 
-		public void SetMousePositionOnFirstMouseClick()
+		public void SetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI)
 		{
 			hook.MouseMoved += (sender, e) =>
 			{
 				coordinatesX = e.Data.X;
 				coordinatesY = e.Data.Y;
+
+				UpdateUI(coordinatesX, coordinatesY);
 			};
 
 			hook.MouseClicked += (sender, e) =>
@@ -34,7 +37,7 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 			coordinatesY = 0;
 			do
 			{
-				GetKeyboardDataFromUserPopUp. //podpiac koordynaty bezposrednio do okna??
+			 //podpiac koordynaty bezposrednio do okna??
 			}
 			while (coordinatesY == 0 && coordinatesX == 0);
 		}

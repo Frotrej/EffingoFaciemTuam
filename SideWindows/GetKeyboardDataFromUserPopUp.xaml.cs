@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace EffingoFaciemTuam.SideWindows
 {
@@ -20,7 +9,7 @@ namespace EffingoFaciemTuam.SideWindows
 		{
 			InitializeComponent();
 
-			
+
 		}
 
 		private void CloseWindow(object sender, RoutedEventArgs e)
@@ -32,10 +21,15 @@ namespace EffingoFaciemTuam.SideWindows
 		private void Button_Click_GetCoordinatesForElement(object sender, RoutedEventArgs e)
 		{
 			SharpHookImplementation.SharphookMouse sharphookMouse = new();
-			sharphookMouse.SetMousePositionOnFirstMouseClick();
-			int X = sharphookMouse.coordinatesX;
-			int Y = sharphookMouse.coordinatesY;
-			//nie dziala znalezc lepsze rozwiazanie
+			sharphookMouse.SetMousePositionOnFirstMouseClick(UpdateUI);
+		}
+
+		public delegate void UpdateCoordinatesInUI(int x, int y);
+
+		public void UpdateUI(int x, int y)
+		{
+			TextBlockXcoord.Text = $"X: {x}";
+			TextBlockYcoord.Text = $"Y: {y}";
 		}
 	}
 }

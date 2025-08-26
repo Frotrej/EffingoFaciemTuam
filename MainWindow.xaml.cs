@@ -60,7 +60,7 @@ namespace EffingoFaciemTuam
 		{
 			SharphookMouse sharphookMouse = new SharphookMouse();
 
-			sharphookMouse.SetMousePositionOnFirstMouseClick();
+			//sharphookMouse.SetMousePositionOnFirstMouseClick();
 
 			Clipboard.SetText($"X:{sharphookMouse.coordinatesX}, Y:{sharphookMouse.coordinatesY}");
 		}
