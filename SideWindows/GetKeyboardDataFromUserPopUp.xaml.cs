@@ -20,8 +20,14 @@ namespace EffingoFaciemTuam.SideWindows
 
 		private void Button_Click_StartTrackMouseUntilClick(object sender, RoutedEventArgs e)
 		{
+			
+
 			SharpHookImplementation.SharphookMouse sharphookMouse = new();
 			sharphookMouse.SetMousePositionOnFirstMouseClick(UpdateUI);
+
+			//Tu skonczylem 
+			//zabezpieczyc sie przed wielokrotnym kliknieciem przycisku i uruchomieniem wielu instancji hooka
+			
 		}
 
 		public delegate void UpdateCoordinatesInUI(int x, int y);

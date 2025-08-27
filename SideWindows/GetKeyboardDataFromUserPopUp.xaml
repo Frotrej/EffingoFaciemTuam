@@ -5,11 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EffingoFaciemTuam.SideWindows"
         mc:Ignorable="d"
-        Title="GetKeyboardDataFromUserPopUp" Height="70" Width="100">
+        Title="GetKeyboardDataFromUserPopUp" 
+        SizeToContent="WidthAndHeight"
+        >
     <Grid>
-        <TextBlock x:Name="TextBlockXcoord" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <TextBlock x:Name="TextBlockYcoord" HorizontalAlignment="Left" Margin="10,31,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Button Content="Start" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="64,10,0,0" Height="37" Click="Button_Click_StartTrackMouseUntilClick"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+        </Grid.RowDefinitions>
 
+        <TextBlock x:Name="TextBlockXcoord" Grid.Column="0" Grid.Row="0" Text="X:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <TextBlock x:Name="TextBlockYcoord" Grid.Column="0" Grid.Row="1" Text="Y:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <Button x:Name="BtnStartTrackMouse" Grid.Column="1" Grid.Row="0" Content="Start" Click="Button_Click_StartTrackMouseUntilClick" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
+        <Button x:Name="BtnSaveAndClose" Grid.Column="1" Grid.Row="1" Content="Zapisz" Click="Button_Click_StartTrackMouseUntilClick" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
     </Grid>
+
 </Window>
