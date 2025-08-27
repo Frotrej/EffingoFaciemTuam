@@ -21,6 +21,7 @@ namespace EffingoFaciemTuam.Model
 			Mysz //mouse
 		};
 
+		//for UI dropdown
 		public static Array StepTypes => Enum.GetValues(typeof(ElementType));
 
 		public SequenceElement()

@@ -31,7 +31,7 @@ namespace EffingoFaciemTuam.Windows
 			/*SequenceElement element = new();
 			element.StepNumber = Elements.Count + 1;
 			Elements.Add(element);*/
-			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp();
+			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Elements);
 			_window.ShowDialog();
 		}
 
