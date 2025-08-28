@@ -14,7 +14,6 @@ namespace EffingoFaciemTuam.Model
 		public char KeyboardKey { get; set; }
 		public int MouseX { get; set; }
 		public int MouseY { get; set; }
-
 		public enum ElementType
 		{
 			Klawiatura, //keyboard
@@ -24,7 +23,7 @@ namespace EffingoFaciemTuam.Model
 		//for UI dropdown
 		public static Array StepTypes => Enum.GetValues(typeof(ElementType));
 
-		public SequenceElement()
+		/*public SequenceElement()
 		{
 			StepNumber = 1;
 			Delay = 100;
@@ -32,6 +31,25 @@ namespace EffingoFaciemTuam.Model
 			KeyboardKey = 'a';
 			MouseX = 0;
 			MouseY = 0;
+		}*/
+		public SequenceElement(ElementType type, int X, int Y)
+		{
+			StepNumber = 1;
+			Delay = 100;
+			Type = type;
+			KeyboardKey = '-';
+			MouseX = X;
+			MouseY = Y;
 		}
+		public SequenceElement(ElementType type, char key)
+		{
+			StepNumber = 1;
+			Delay = 100;
+			Type = type;
+			KeyboardKey = key;
+			MouseX = 0;
+			MouseY = 0;
+		}
+
 	}
 }

@@ -56,15 +56,6 @@ namespace EffingoFaciemTuam
 			return buttonID;
 		}
 
-		private void GetMousexyOnNextMouseClick(object sender, RoutedEventArgs e)
-		{
-			SharphookMouse sharphookMouse = new SharphookMouse();
-
-			//sharphookMouse.SetMousePositionOnFirstMouseClick();
-
-			Clipboard.SetText($"X:{sharphookMouse.coordinatesX}, Y:{sharphookMouse.coordinatesY}");
-		}
-
 		private void OpenWindow_SequenceManagement(object sender, RoutedEventArgs e)
 		{
 			SequenceManagement _window = new SequenceManagement();

@@ -9,13 +9,13 @@ namespace EffingoFaciemTuam.SideWindows
 	{
 		//This window is used to get data from user to create a mouse element for SequenceElement and pass it to the sequence
 
-		private ObservableCollection<SequenceElement> _element;
+		private ObservableCollection<SequenceElement> _sequenceElements;
 
-		public GetKeyboardDataFromUserPopUp(ObservableCollection<SequenceElement> element)
+		public GetKeyboardDataFromUserPopUp(ObservableCollection<SequenceElement> sequenceElements)
 		{
 			InitializeComponent();
 
-			_element = element;
+			_sequenceElements = sequenceElements;
 		}
 
 		private void CloseWindow(object sender, RoutedEventArgs e)
@@ -23,24 +23,25 @@ namespace EffingoFaciemTuam.SideWindows
 			Close();
 		}
 
-		private void GetPosAndTrackMouseUntilClick(SequenceElement elemenet)
+		//CreateFillAndAddSequenceElement
+		private async void Button_Click_CreateFillAndAddSequenceElement(object sender, RoutedEventArgs e)
+		{
+			BtnStartTrackMouse.IsEnabled = false;
+
+			SequenceElement newElemenet = new(SequenceElement.ElementType.Mysz, 0, 0);
+
+			await StartTrackingMouseUntilClick(newElemenet);
+
+			_sequenceElements.Add(newElemenet);
+
+			BtnStartTrackMouse.IsEnabled = true;
+		}
+
+		private async Task StartTrackingMouseUntilClick(SequenceElement newElement)
 		{
 			SharpHookImplementation.SharphookMouse sharphookMouse = new();
-			sharphookMouse.SetMousePositionOnFirstMouseClick(UpdateCoordinatesUI);
-
-			elemenet.MouseX = sharphookMouse.coordinatesX;
-			elemenet.MouseY = sharphookMouse.coordinatesY;
+			await sharphookMouse.SetMousePositionOnFirstMouseClick(UpdateCoordinatesUI, newElement);
 		}
-		
-		//CreateFillAndAddSequenceElement
-		private void Button_Click_CreateFillAndAddSequenceElement(object sender, RoutedEventArgs e)
-		{
-			SequenceElement newElemenet = new();
-
-			GetPosAndTrackMouseUntilClick(newElemenet);
-
-			_element.Add(newElemenet);//dziala ale nie czeka na klikniecie myszy hehe
-		}	
 
 		public delegate void UpdateCoordinatesInUI(int x, int y);
 

@@ -1,6 +1,5 @@
-﻿using EffingoFaciemTuam.SideWindows;
+﻿using EffingoFaciemTuam.Model;
 using SharpHook;
-using System.Windows;
 using static EffingoFaciemTuam.SideWindows.GetKeyboardDataFromUserPopUp;
 
 namespace EffingoFaciemTuam.SharpHookImplementation
@@ -9,37 +8,26 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 	{
 		public SimpleGlobalHook hook = new SimpleGlobalHook();
 
-		public int coordinatesX = 0;
-		public int coordinatesY = 0;
-
-
-		public void SetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI)
+		public async Task SetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
 		{
+			var tcs = new TaskCompletionSource();
+
 			hook.MouseMoved += (sender, e) =>
 			{
-				coordinatesX = e.Data.X;
-				coordinatesY = e.Data.Y;
-
-				UpdateUI(coordinatesX, coordinatesY);
+				UpdateUI(e.Data.X, e.Data.Y);
 			};
 
 			hook.MouseClicked += (sender, e) =>
 			{
-				coordinatesX = e.Data.X;
-				coordinatesY = e.Data.Y;
+				element.MouseX = e.Data.X;
+				element.MouseY = e.Data.Y;
 
 				hook.Dispose();
+				tcs.TrySetResult();
 			};
 
-			hook.RunAsync();
-
-			coordinatesX = 0;
-			coordinatesY = 0;
-			do
-			{
-			 //podpiac koordynaty bezposrednio do okna??
-			}
-			while (coordinatesY == 0 && coordinatesX == 0);
+			await hook.RunAsync();
+			await tcs.Task;
 		}
 	}
 }

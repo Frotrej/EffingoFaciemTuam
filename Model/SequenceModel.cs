@@ -18,7 +18,12 @@ namespace EffingoFaciemTuam.Model
 			set { sequence = value; }
 		}
 
-		public void AddElementToSequence(SequenceElement element) { Sequence.Add(element); }
+		public void AddElementToSequence(SequenceElement element)
+		{
+			element.StepNumber = Sequence.Count + 1;
+
+			Sequence.Add(element);
+		}
 		public void RemoveElementFromSequence(SequenceElement element) { Sequence.Remove(element); }
 	}
 }

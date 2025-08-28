@@ -10,14 +10,13 @@ namespace EffingoFaciemTuam.Windows
 	{
 		public ObservableCollection<SequenceElement> Elements { get; set; }
 
+		
+
 		public SequenceManagement()
 		{
 			InitializeComponent();
 
-			Elements = new ObservableCollection<SequenceElement>
-			{
-				new SequenceElement(),
-			};
+			Elements = new();
 			DataContext = this;
 		}
 
@@ -28,9 +27,6 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			/*SequenceElement element = new();
-			element.StepNumber = Elements.Count + 1;
-			Elements.Add(element);*/
 			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Elements);
 			_window.ShowDialog();
 		}
