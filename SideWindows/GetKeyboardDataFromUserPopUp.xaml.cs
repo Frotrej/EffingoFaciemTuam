@@ -7,15 +7,15 @@ namespace EffingoFaciemTuam.SideWindows
 {
 	public partial class GetKeyboardDataFromUserPopUp : Window
 	{
-		//This window is used to get data from user to create a mouse element for SequenceElement and pass it to the sequence
+		//This window is used to get data from user to create a mouse element for SequenceElement and add new element to SequenceModel
 
-		private ObservableCollection<SequenceElement> _sequenceElements;
+		private SequenceModel _sequenceElements;
 
-		public GetKeyboardDataFromUserPopUp(ObservableCollection<SequenceElement> sequenceElements)
+		public GetKeyboardDataFromUserPopUp(SequenceModel sequence)
 		{
 			InitializeComponent();
 
-			_sequenceElements = sequenceElements;
+			_sequenceElements = sequence;
 		}
 
 		private void CloseWindow(object sender, RoutedEventArgs e)
@@ -27,14 +27,16 @@ namespace EffingoFaciemTuam.SideWindows
 		private async void Button_Click_CreateFillAndAddSequenceElement(object sender, RoutedEventArgs e)
 		{
 			BtnStartTrackMouse.IsEnabled = false;
+			this.Topmost = !this.Topmost;
 
 			SequenceElement newElemenet = new(SequenceElement.ElementType.Mysz, 0, 0);
 
 			await StartTrackingMouseUntilClick(newElemenet);
 
-			_sequenceElements.Add(newElemenet);
+			_sequenceElements.AddElementToSequence(newElemenet);
 
 			BtnStartTrackMouse.IsEnabled = true;
+			this.Topmost = !this.Topmost;
 		}
 
 		private async Task StartTrackingMouseUntilClick(SequenceElement newElement)
