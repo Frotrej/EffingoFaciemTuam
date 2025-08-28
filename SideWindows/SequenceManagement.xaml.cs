@@ -1,4 +1,5 @@
 ﻿using EffingoFaciemTuam.Model;
+using EffingoFaciemTuam.SideWindows;
 using System.Collections.ObjectModel;
 using System.DirectoryServices;
 using System.Windows;
@@ -9,14 +10,13 @@ namespace EffingoFaciemTuam.Windows
 	{
 		public ObservableCollection<SequenceElement> Elements { get; set; }
 
+		
+
 		public SequenceManagement()
 		{
 			InitializeComponent();
 
-			Elements = new ObservableCollection<SequenceElement>
-			{
-				new SequenceElement(),
-			};
+			Elements = new();
 			DataContext = this;
 		}
 
@@ -27,9 +27,8 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			SequenceElement element = new();
-			element.StepNumber = Elements.Count + 1;
-			Elements.Add(element);
+			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Elements);
+			_window.ShowDialog();
 		}
 
 		private void Button_Click_RemoveElement(object sender, RoutedEventArgs e)
@@ -40,6 +39,40 @@ namespace EffingoFaciemTuam.Windows
 				return;
 			}
 			Elements.RemoveAt(Elements.Count - 1);
+		}
+
+		private void Button_Click_TestSequence(object sender, RoutedEventArgs e)
+		{
+			foreach (var element in Elements)
+			{
+				if (element.Type == SequenceElement.ElementType.Klawiatura)
+					ExecuteKeyboardSequenceElement(element);
+				if (element.Type == SequenceElement.ElementType.Mysz)
+					ExecuteMouseSequenceElement(element);
+			}
+		}
+
+		private void ExecuteMouseSequenceElement(SequenceElement element)
+		{
+			// simulate mouse action in sharphook based on element
+		}
+
+		private void ExecuteKeyboardSequenceElement(SequenceElement element)
+		{
+			//simualte keyboard action in sharphook based on element
+		}
+
+		private void GetValuesFromUserForSequenceElement(SequenceElement element)
+		{
+			if (element.Type == SequenceElement.ElementType.Klawiatura)
+			{
+				//get values for keyboard element
+				//1 ask user for type of input (char, string, shortcut combination
+			}
+			if (element.Type == SequenceElement.ElementType.Mysz)
+			{
+				//get values for mouse element
+			}
 		}
 	}
 }

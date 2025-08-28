@@ -10,9 +10,6 @@
         Closing="OnMainWindowClose">
 
     <Grid>
-
-
-
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="0.07*"/>
@@ -122,8 +119,6 @@
                 <Button Grid.Row="6" Name="SimulateButton7" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
             </Grid>
         </Border>
-
-        <Button Content="chujdupa" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="1" VerticalAlignment="Top" Height="30" Width="45" Click="GetMousexyOnNextMouseClick" Margin="0,5,0,0" />
 
     </Grid>
 

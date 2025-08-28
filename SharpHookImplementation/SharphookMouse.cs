@@ -1,5 +1,6 @@
-﻿using SharpHook;
-using System.Windows;
+﻿using EffingoFaciemTuam.Model;
+using SharpHook;
+using static EffingoFaciemTuam.SideWindows.GetKeyboardDataFromUserPopUp;
 
 namespace EffingoFaciemTuam.SharpHookImplementation
 {
@@ -7,29 +8,26 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 	{
 		public SimpleGlobalHook hook = new SimpleGlobalHook();
 
-		public int coordinatesX = 0;
-		public int coordinatesY = 0;
-
-
-		public void SetMousePositionOnFirstMouseClick()
+		public async Task SetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
 		{
-			hook.MouseClicked += (sender, e) =>
-			{
-				coordinatesX = e.Data.X;
-				coordinatesY = e.Data.Y;
+			var tcs = new TaskCompletionSource();
 
-				hook.Dispose();
+			hook.MouseMoved += (sender, e) =>
+			{
+				UpdateUI(e.Data.X, e.Data.Y);
 			};
 
-			hook.RunAsync();
-
-			coordinatesX = 0;
-			coordinatesY = 0;
-			do
+			hook.MouseClicked += (sender, e) =>
 			{
+				element.MouseX = e.Data.X;
+				element.MouseY = e.Data.Y;
 
-			}
-			while (coordinatesY == 0 && coordinatesX == 0);
+				hook.Dispose();
+				tcs.TrySetResult();
+			};
+
+			await hook.RunAsync();
+			await tcs.Task;
 		}
 	}
 }
