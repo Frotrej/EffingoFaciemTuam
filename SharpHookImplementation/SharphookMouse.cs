@@ -8,7 +8,7 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 	{
 		public SimpleGlobalHook hook = new SimpleGlobalHook();
 
-		public async Task SetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
+		public async Task GetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
 		{
 			var tcs = new TaskCompletionSource();
 

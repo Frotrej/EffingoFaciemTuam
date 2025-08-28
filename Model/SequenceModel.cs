@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace EffingoFaciemTuam.Model
 {
-	class SequenceModel
+	public class SequenceModel
 	{
 
 		private ObservableCollection<SequenceElement> sequence = new ObservableCollection<SequenceElement>();
@@ -21,9 +17,16 @@ namespace EffingoFaciemTuam.Model
 		public void AddElementToSequence(SequenceElement element)
 		{
 			element.StepNumber = Sequence.Count + 1;
-
 			Sequence.Add(element);
 		}
-		public void RemoveElementFromSequence(SequenceElement element) { Sequence.Remove(element); }
+		public void RemoveLastElementFromSequence()
+		{
+			if (Sequence.Count <= 0)
+			{
+				MessageBox.Show("Brak elementów do usunięcia.");
+				return;
+			}
+			Sequence.RemoveAt(Sequence.Count - 1);
+		}
 	}
 }

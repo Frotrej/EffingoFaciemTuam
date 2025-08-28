@@ -8,15 +8,13 @@ namespace EffingoFaciemTuam.Windows
 {
 	public partial class SequenceManagement : Window
 	{
-		public ObservableCollection<SequenceElement> Elements { get; set; }
-
-		
+		public SequenceModel Sequence { get; set; }
 
 		public SequenceManagement()
 		{
 			InitializeComponent();
 
-			Elements = new();
+			Sequence = new();
 			DataContext = this;
 		}
 
@@ -27,23 +25,18 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Elements);
+			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Sequence);
 			_window.ShowDialog();
 		}
 
 		private void Button_Click_RemoveElement(object sender, RoutedEventArgs e)
 		{
-			if (Elements.Count <= 0)
-			{
-				MessageBox.Show("Brak elementów do usunięcia.");
-				return;
-			}
-			Elements.RemoveAt(Elements.Count - 1);
+			Sequence.RemoveLastElementFromSequence();
 		}
 
 		private void Button_Click_TestSequence(object sender, RoutedEventArgs e)
 		{
-			foreach (var element in Elements)
+			foreach (var element in Sequence.Sequence)
 			{
 				if (element.Type == SequenceElement.ElementType.Klawiatura)
 					ExecuteKeyboardSequenceElement(element);
