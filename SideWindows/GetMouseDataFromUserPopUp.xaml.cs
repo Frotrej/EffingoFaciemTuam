@@ -1,13 +1,11 @@
 ﻿using EffingoFaciemTuam.Model;
-using System.Collections.ObjectModel;
-using System.Runtime.CompilerServices;
 using System.Windows;
 
 namespace EffingoFaciemTuam.SideWindows
 {
 	public partial class GetKeyboardDataFromUserPopUp : Window
 	{
-		//This window is used to get data from user to create a mouse element for SequenceElement and add new element to SequenceModel
+		//This window is used to get data from user to create a mouse element for SequenceElement and add this element to SequenceModel
 
 		private SequenceModel _sequenceElements;
 
@@ -42,7 +40,7 @@ namespace EffingoFaciemTuam.SideWindows
 		private async Task StartTrackingMouseUntilClick(SequenceElement newElement)
 		{
 			SharpHookImplementation.SharphookMouse sharphookMouse = new();
-			await sharphookMouse.SetMousePositionOnFirstMouseClick(UpdateCoordinatesUI, newElement);
+			await sharphookMouse.GetMousePositionOnFirstMouseClick(UpdateCoordinatesUI, newElement);
 		}
 
 		public delegate void UpdateCoordinatesInUI(int x, int y);

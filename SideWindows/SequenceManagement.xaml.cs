@@ -25,22 +25,13 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			this.Topmost = !this.Topmost;
-
 			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Sequence);
 			_window.ShowDialog();
-
-			this.Topmost = !this.Topmost;
 		}
 
 		private void Button_Click_RemoveElement(object sender, RoutedEventArgs e)
 		{
-			if (Sequence.Sequence.Count <= 0)
-			{
-				MessageBox.Show("Brak elementów do usunięcia.");
-				return;
-			}
-			Sequence.Sequence.RemoveAt(Sequence.Sequence.Count - 1);
+			Sequence.RemoveLastElementFromSequence();
 		}
 
 		private void Button_Click_TestSequence(object sender, RoutedEventArgs e)
