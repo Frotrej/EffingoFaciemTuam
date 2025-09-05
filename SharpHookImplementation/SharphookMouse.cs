@@ -1,6 +1,6 @@
 ﻿using EffingoFaciemTuam.Model;
 using SharpHook;
-using static EffingoFaciemTuam.SideWindows.GetKeyboardDataFromUserPopUp;
+using static EffingoFaciemTuam.SideWindows.GetMouseDataFromUserPopUp;
 
 namespace EffingoFaciemTuam.SharpHookImplementation
 {
