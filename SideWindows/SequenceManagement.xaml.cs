@@ -1,5 +1,6 @@
 ﻿using EffingoFaciemTuam.Model;
 using EffingoFaciemTuam.SideWindows;
+using EffingoFaciemTuam.SideWindows.AddElementWindowsSequence;
 using System.Collections.ObjectModel;
 using System.DirectoryServices;
 using System.Windows;
@@ -25,8 +26,23 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			GetKeyboardDataFromUserPopUp _window = new GetKeyboardDataFromUserPopUp(Sequence);
-			_window.ShowDialog();
+			SequenceElement newElement = new SequenceElement(SequenceElement.ElementType.Klawiatura, 0, 0);
+
+			ChooseElementType _chooseElementTypeWindow = new ChooseElementType(newElement);
+			_chooseElementTypeWindow.ShowDialog();
+
+			if (newElement.Type == SequenceElement.ElementType.Mysz)
+			{
+				GetMouseDataFromUserPopUp _window = new GetMouseDataFromUserPopUp(newElement);
+				_window.ShowDialog();
+			}
+			else if (newElement.Type == SequenceElement.ElementType.Klawiatura)
+			{
+				//get keyboard data from user
+			}
+
+
+			Sequence.AddElementToSequence(newElement);
 		}
 
 		private void Button_Click_RemoveElement(object sender, RoutedEventArgs e)

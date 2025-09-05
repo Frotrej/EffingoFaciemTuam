@@ -42,7 +42,7 @@
 
 
         <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="380,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_AddElement"/>
-        <Button Content="-" Name="ButtonRemoveElement" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_RemoveElement"/>
+        <Button Content="-" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="425,0,0,0" Grid.Row="1" Width="20" Height="20" Click="Button_Click_RemoveElement"/>
 
         <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
         <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
