@@ -4,11 +4,11 @@ using static EffingoFaciemTuam.SideWindows.GetMouseDataFromUserPopUp;
 
 namespace EffingoFaciemTuam.SharpHookImplementation
 {
-	internal class SharphookMouse
+	internal class SharphookImplementation
 	{
 		public SimpleGlobalHook hook = new SimpleGlobalHook();
 
-		public async Task GetMousePositionOnFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
+		public async Task RefreshMousePositionUntillFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
 		{
 			var tcs = new TaskCompletionSource();
 
@@ -22,12 +22,29 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 				element.MouseX = e.Data.X;
 				element.MouseY = e.Data.Y;
 
-				hook.Dispose();
+				StopSharphook();
 				tcs.TrySetResult();
 			};
 
 			await hook.RunAsync();
 			await tcs.Task;
+		}
+
+		public async Task TrackKbdKeys(SequenceElement element)
+		{
+			hook.KeyTyped += (sender, e) =>
+			{
+				element.KeyboardKeys.Add(e.Data.KeyCode);
+
+				element.TranslateToString(element.KeyboardKeys);
+			};
+
+			await hook.RunAsync();
+		}
+
+		public void StopSharphook()
+		{
+			hook.Dispose();
 		}
 	}
 }

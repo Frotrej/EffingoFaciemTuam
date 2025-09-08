@@ -26,21 +26,13 @@ namespace EffingoFaciemTuam.Windows
 
 		private void Button_Click_AddElement(object sender, RoutedEventArgs e)
 		{
-			SequenceElement newElement = new SequenceElement(SequenceElement.ElementType.Klawiatura, 0, 0);
+			SequenceElement newElement = new SequenceElement();
 
+			//open window to choose type of element
 			ChooseElementType _chooseElementTypeWindow = new ChooseElementType(newElement);
 			_chooseElementTypeWindow.ShowDialog();
 
-			if (newElement.Type == SequenceElement.ElementType.Mysz)
-			{
-				GetMouseDataFromUserPopUp _window = new GetMouseDataFromUserPopUp(newElement);
-				_window.ShowDialog();
-			}
-			else if (newElement.Type == SequenceElement.ElementType.Klawiatura)
-			{
-				//get keyboard data from user
-			}
-
+			OpenWindowToGetValuesFromUserBasedOnElementType(newElement);
 
 			Sequence.AddElementToSequence(newElement);
 		}
@@ -71,16 +63,17 @@ namespace EffingoFaciemTuam.Windows
 			//simualte keyboard action in sharphook based on element
 		}
 
-		private void GetValuesFromUserForSequenceElement(SequenceElement element)
+		private void OpenWindowToGetValuesFromUserBasedOnElementType(SequenceElement newElement)
 		{
-			if (element.Type == SequenceElement.ElementType.Klawiatura)
+			if (newElement.Type == SequenceElement.ElementType.Mysz)
 			{
-				//get values for keyboard element
-				//1 ask user for type of input (char, string, shortcut combination
+				GetMouseDataFromUserPopUp _window = new GetMouseDataFromUserPopUp(newElement);
+				_window.ShowDialog();
 			}
-			if (element.Type == SequenceElement.ElementType.Mysz)
+			else if (newElement.Type == SequenceElement.ElementType.Klawiatura)
 			{
-				//get values for mouse element
+				GetKbdDataFromUserPupUp _window = new GetKbdDataFromUserPupUp(newElement);
+				_window.ShowDialog();
 			}
 		}
 	}

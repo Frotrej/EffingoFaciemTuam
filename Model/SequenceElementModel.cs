@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SharpHook.Data;
+using System.Windows.Media;
 
 namespace EffingoFaciemTuam.Model
 {
@@ -11,7 +8,8 @@ namespace EffingoFaciemTuam.Model
 		public int StepNumber { get; set; }
 		public int Delay { get; set; }
 		public ElementType Type { get; set; }
-		public char KeyboardKey { get; set; }
+		public HashSet<KeyCode>? KeyboardKeys { get; set; }
+		public string KeyboardKeysString { get; set; }
 		public int MouseX { get; set; }
 		public int MouseY { get; set; }
 		public enum ElementType
@@ -23,33 +21,46 @@ namespace EffingoFaciemTuam.Model
 		//for UI dropdown
 		public static Array StepTypes => Enum.GetValues(typeof(ElementType));
 
-		/*public SequenceElement()
+		public SequenceElement()
+		{
+			StepNumber = 1;
+			Delay = 100;
+			KeyboardKeys = new HashSet<KeyCode>();
+			KeyboardKeysString = "-";
+			MouseX = 0;
+			MouseY = 0;
+		}
+		public SequenceElement(int X, int Y)
+		{
+			StepNumber = 1;
+			Delay = 100;
+			Type = ElementType.Mysz;
+			KeyboardKeys = new HashSet<KeyCode>();
+			KeyboardKeysString = "-";
+			MouseX = X;
+			MouseY = Y;
+		}
+		public SequenceElement(HashSet<KeyCode>? keyboardKeys)
 		{
 			StepNumber = 1;
 			Delay = 100;
 			Type = ElementType.Klawiatura;
-			KeyboardKey = 'a';
+			KeyboardKeys = new HashSet<KeyCode>();
 			MouseX = 0;
 			MouseY = 0;
-		}*/
-		public SequenceElement(ElementType type, int X, int Y)
-		{
-			StepNumber = 1;
-			Delay = 100;
-			Type = type;
-			KeyboardKey = '-';
-			MouseX = X;
-			MouseY = Y;
-		}
-		public SequenceElement(ElementType type, char key)
-		{
-			StepNumber = 1;
-			Delay = 100;
-			Type = type;
-			KeyboardKey = key;
-			MouseX = 0;
-			MouseY = 0;
+
+			if (keyboardKeys != null && keyboardKeys.Count > 0)
+				KeyboardKeysString = string.Join("+", keyboardKeys);
+			else
+				KeyboardKeysString = "-";
 		}
 
+		public void TranslateToString(HashSet<KeyCode>? keyboardKeys)
+		{
+			if (keyboardKeys != null && keyboardKeys.Count > 0)
+				KeyboardKeysString = string.Join("+", keyboardKeys.Select(k => k.ToString().Replace("Vc", "")));
+			else
+				KeyboardKeysString = "-";
+		}
 	}
 }
