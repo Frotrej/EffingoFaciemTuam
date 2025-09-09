@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EffingoFaciemTuam.SideWindows"
         mc:Ignorable="d"
         Title="GetKeyboardDataFromUserPopUp" 
-        SizeToContent="WidthAndHeight"
+        Height="200" Width="250"
         >
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,9 +18,14 @@
             <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock x:Name="TextBlockXcoord" Grid.Column="0" Grid.Row="0" Text="X:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-        <TextBlock x:Name="TextBlockYcoord" Grid.Column="0" Grid.Row="1" Text="Y:" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5"/>
-        <Button x:Name="BtnStartTrackMouse" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Content="Start" Click="Button_Click_CreateFillAndAddSequenceElement" Margin="5"/>
+        <Border Grid.Column="0" Grid.Row="0"  VerticalAlignment="Center" Margin="15,0,15,0" BorderBrush="Black" BorderThickness="1">
+            <TextBlock x:Name="TextBlockXcoord"  Text="X:" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1"  VerticalAlignment="Center" Margin="15,0,15,0" BorderBrush="Black" BorderThickness="1">
+            <TextBlock x:Name="TextBlockYcoord"  Text="Y:" />
+        </Border>
+        
+        <Button x:Name="BtnStartTrackMouse" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Content="Start" Click="Button_Click_FillMouseSequenceElement" Margin="5"/>
     </Grid>
 
 </Window>

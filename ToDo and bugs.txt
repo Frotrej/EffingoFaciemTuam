@@ -1,0 +1,3 @@
+﻿bug in SharphookImplementation.cs po ponownym uruchomieniu nasłuchiwania hooka po jego zatrzymaniu
+
+Rozpocząć implementację symulacji inputów myszy i klawiatury

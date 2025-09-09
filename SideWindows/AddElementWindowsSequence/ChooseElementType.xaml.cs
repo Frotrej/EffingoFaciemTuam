@@ -20,6 +20,7 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 	/// </summary>
 	public partial class ChooseElementType : Window
 	{
+		//choose if element will be keyboard or mouse element, after that close window, next window will be opened based on this choice in SequenceManagementWindow
 		SequenceElement _element;
 
 		public ChooseElementType(SequenceElement element)

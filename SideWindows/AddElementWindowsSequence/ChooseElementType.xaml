@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EffingoFaciemTuam.SideWindows.AddElementWindowsSequence"
         mc:Ignorable="d"
-        Title="ChooseElementType" Height="150" Width="150">
+        Title="ChooseElementType" Height="200" Width="250">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
