@@ -15,14 +15,14 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 			InitializeComponent();
 
 			_newElement = element;
-			DataContext = _newElement; //bind to UI tu sokonczylem
+			DataContext = _newElement;
 			sharphookKbd = new();
 		}
 
-		private void Button_Click_CloseWindow(object sender, RoutedEventArgs e)
+		private void Button_Click_StopTrackingAndCloseWindow(object sender, RoutedEventArgs e)
 		{
+			sharphookKbd.StopSharphook();
 			Close();
-
 		}
 
 		private async void Button_Click_FillKbdSequenceElement(object sender, RoutedEventArgs e)

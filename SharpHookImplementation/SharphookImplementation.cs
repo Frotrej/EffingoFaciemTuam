@@ -6,6 +6,7 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 {
 	internal class SharphookImplementation
 	{
+		//error when calling hook again because it is disposed
 		public SimpleGlobalHook hook = new SimpleGlobalHook();
 
 		public async Task RefreshMousePositionUntillFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)

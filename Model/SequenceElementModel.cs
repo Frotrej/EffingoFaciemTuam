@@ -1,15 +1,26 @@
 ﻿using SharpHook.Data;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Windows.Media;
 
 namespace EffingoFaciemTuam.Model
 {
-	public class SequenceElement
+	public class SequenceElement : INotifyPropertyChanged
 	{
 		public int StepNumber { get; set; }
 		public int Delay { get; set; }
 		public ElementType Type { get; set; }
 		public HashSet<KeyCode>? KeyboardKeys { get; set; }
-		public string KeyboardKeysString { get; set; }
+		public string _keyboardKeysString { get; set; }
+		public string KeyboardKeysString
+		{
+			get { return _keyboardKeysString; }
+			set
+			{
+				_keyboardKeysString = value;
+				OnPropertyChanged(nameof(KeyboardKeysString));
+			}
+		}
 		public int MouseX { get; set; }
 		public int MouseY { get; set; }
 		public enum ElementType
@@ -27,6 +38,8 @@ namespace EffingoFaciemTuam.Model
 			Delay = 100;
 			KeyboardKeys = new HashSet<KeyCode>();
 			KeyboardKeysString = "-";
+			_keyboardKeysString = "-";
+
 			MouseX = 0;
 			MouseY = 0;
 		}
@@ -37,6 +50,7 @@ namespace EffingoFaciemTuam.Model
 			Type = ElementType.Mysz;
 			KeyboardKeys = new HashSet<KeyCode>();
 			KeyboardKeysString = "-";
+			_keyboardKeysString = "-";
 			MouseX = X;
 			MouseY = Y;
 		}
@@ -46,6 +60,8 @@ namespace EffingoFaciemTuam.Model
 			Delay = 100;
 			Type = ElementType.Klawiatura;
 			KeyboardKeys = new HashSet<KeyCode>();
+			_keyboardKeysString = "-";
+			KeyboardKeysString = "-";
 			MouseX = 0;
 			MouseY = 0;
 
@@ -61,6 +77,13 @@ namespace EffingoFaciemTuam.Model
 				KeyboardKeysString = string.Join("+", keyboardKeys.Select(k => k.ToString().Replace("Vc", "")));
 			else
 				KeyboardKeysString = "-";
+		}
+
+
+		public event PropertyChangedEventHandler? PropertyChanged;
+		protected void OnPropertyChanged(string propertyName)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 		}
 	}
 }
