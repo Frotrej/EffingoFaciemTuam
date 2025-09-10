@@ -21,13 +21,17 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 
 		private void Button_Click_StopTrackingAndCloseWindow(object sender, RoutedEventArgs e)
 		{
-			sharphookKbd.StopSharphook();
+			sharphookKbd.hook.Dispose();
 			Close();
 		}
 
 		private async void Button_Click_FillKbdSequenceElement(object sender, RoutedEventArgs e)
 		{
+			StartBtn.IsEnabled = false;
+
 			await StartTrackingKbd(_newElement);
+
+			StartBtn.IsEnabled = true;
 		}
 
 		private async Task StartTrackingKbd(SequenceElement newElement)
@@ -39,7 +43,7 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 
 		private void Button_Click_Stop(object sender, RoutedEventArgs e)
 		{
-			sharphookKbd.StopSharphook();
+			sharphookKbd.hook.Stop();
 		}
 	}
 }

@@ -6,7 +6,6 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 {
 	internal class SharphookImplementation
 	{
-		//error when calling hook again because it is disposed
 		public SimpleGlobalHook hook = new SimpleGlobalHook();
 
 		public async Task RefreshMousePositionUntillFirstMouseClick(UpdateCoordinatesInUI UpdateUI, SequenceElement element)
@@ -23,7 +22,7 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 				element.MouseX = e.Data.X;
 				element.MouseY = e.Data.Y;
 
-				StopSharphook();
+				hook.Dispose();
 				tcs.TrySetResult();
 			};
 
@@ -33,19 +32,14 @@ namespace EffingoFaciemTuam.SharpHookImplementation
 
 		public async Task TrackKbdKeys(SequenceElement element)
 		{
-			hook.KeyTyped += (sender, e) =>
+			hook.KeyPressed += (sender, e) =>
 			{
-				element.KeyboardKeys.Add(e.Data.KeyCode);
+					element.KeyboardKeys.Add(e.Data.KeyCode);
 
 				element.TranslateToString(element.KeyboardKeys);
 			};
 
 			await hook.RunAsync();
-		}
-
-		public void StopSharphook()
-		{
-			hook.Dispose();
 		}
 	}
 }
