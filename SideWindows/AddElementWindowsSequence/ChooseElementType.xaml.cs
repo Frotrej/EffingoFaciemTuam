@@ -22,23 +22,29 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 	{
 		//choose if element will be keyboard or mouse element, after that close window, next window will be opened based on this choice in SequenceManagementWindow
 		SequenceElement _element;
+		public bool _operationSuccessful { get; private set; }
 
 		public ChooseElementType(SequenceElement element)
 		{
 			InitializeComponent();
-
 			_element = element;
 		}
 
 		private void Button_Click_Mouse(object sender, RoutedEventArgs e)
 		{
 			_element.Type = SequenceElement.ElementType.Mysz;
-			Close();
+			WindowCloseSuccessfully();
 		}
 
 		private void Button_Click_Kbd(object sender, RoutedEventArgs e)
 		{
 			_element.Type = SequenceElement.ElementType.Klawiatura;
+			WindowCloseSuccessfully();
+		}
+
+		private void WindowCloseSuccessfully()
+		{
+			_operationSuccessful = true;
 			Close();
 		}
 	}

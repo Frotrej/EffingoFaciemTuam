@@ -9,10 +9,11 @@ namespace EffingoFaciemTuam.SideWindows
 
 		private SequenceElement _newElement;
 
+		public bool _operationSuccessful { get; private set; }
+
 		public GetMouseDataFromUserPopUp(SequenceElement element)
 		{
 			InitializeComponent();
-
 			_newElement = element;
 		}
 
@@ -24,7 +25,7 @@ namespace EffingoFaciemTuam.SideWindows
 
 			BtnStartTrackMouse.IsEnabled = true;
 
-			Close();
+			WindowCloseSuccessfully();
 		}
 
 		private async Task StartTrackingMouseUntilClick(SequenceElement newElement)
@@ -46,6 +47,12 @@ namespace EffingoFaciemTuam.SideWindows
 			{
 				Dispatcher.Invoke(() => UpdateCoordinatesUI(x, y));
 			}
+		}
+
+		private void WindowCloseSuccessfully()
+		{
+			_operationSuccessful = true;
+			Close();
 		}
 	}
 }

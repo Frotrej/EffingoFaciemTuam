@@ -21,8 +21,8 @@ namespace EffingoFaciemTuam.Model
 				OnPropertyChanged(nameof(KeyboardKeysString));
 			}
 		}
-		public int MouseX { get; set; }
-		public int MouseY { get; set; }
+		public short MouseX { get; set; }
+		public short MouseY { get; set; }
 		public enum ElementType
 		{
 			Klawiatura, //keyboard
@@ -43,7 +43,7 @@ namespace EffingoFaciemTuam.Model
 			MouseX = 0;
 			MouseY = 0;
 		}
-		public SequenceElement(int X, int Y)
+		public SequenceElement(short X, short Y)
 		{
 			StepNumber = 1;
 			Delay = 100;

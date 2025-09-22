@@ -23,9 +23,9 @@
         </Border>
         
         <Button x:Name="StartBtn" Grid.Column="0" Grid.Row="1" Content="Start" Click="Button_Click_FillKbdSequenceElement"/>
-        <Button Grid.Column="1" Grid.Row="1" Content=":)"/>
+        <Button Grid.Column="1" Grid.Row="1" Content="Anuluj" Click="Button_Click_Cancel"/>
         <Button Grid.Column="2" Grid.Row="1" Content="Stop" Click="Button_Click_Stop"/>
-        <Button Grid.Column="3" Grid.Row="1" Content="Zapisz" Click="Button_Click_StopTrackingAndCloseWindow"/>
+        <Button Grid.Column="3" Grid.Row="1" Content="Zapisz" Click="Button_Click_StopTrackingAndCloseWindowCorrectly"/>
 
     </Grid>
 </Window>
