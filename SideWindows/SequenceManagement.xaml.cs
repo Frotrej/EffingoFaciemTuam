@@ -10,13 +10,13 @@ namespace EffingoFaciemTuam.Windows
 {
 	public partial class SequenceManagement : Window
 	{
-		public SequenceModel Sequence { get; set; }
+		public SequenceModel Sequence;
 
 		public SequenceManagement()
 		{
 			InitializeComponent();
 
-			Sequence = new();
+			Sequence = SequenceStore.Sequence;
 			DataContext = this;
 		}
 
@@ -29,12 +29,12 @@ namespace EffingoFaciemTuam.Windows
 		{
 			SequenceElement newElement = new SequenceElement();
 
-			//open window to choose type of element
 			ChooseElementType _chooseElementTypeWindow = new ChooseElementType(newElement);
 			_chooseElementTypeWindow.Owner = this;
 			_chooseElementTypeWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
 			_chooseElementTypeWindow.ShowDialog();
 			if (!_chooseElementTypeWindow._operationSuccessful) return;
+
 
 			if (!OpenWindowToGetValuesFromUserBasedOnElementType(newElement)) return;
 

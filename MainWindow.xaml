@@ -110,13 +110,13 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" Name="SimulateButton1" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
-                <Button Grid.Row="1" Name="SimulateButton2" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
-                <Button Grid.Row="2" Name="SimulateButton3" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
-                <Button Grid.Row="3" Name="SimulateButton4" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
-                <Button Grid.Row="4" Name="SimulateButton5" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
-                <Button Grid.Row="5" Name="SimulateButton6" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
-                <Button Grid.Row="6" Name="SimulateButton7" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" />
+                <Button Grid.Row="0" Name="SimulateButton1" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
+                <Button Grid.Row="1" Name="SimulateButton2" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
+                <Button Grid.Row="2" Name="SimulateButton3" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
+                <Button Grid.Row="3" Name="SimulateButton4" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
+                <Button Grid.Row="4" Name="SimulateButton5" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
+                <Button Grid.Row="5" Name="SimulateButton6" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
+                <Button Grid.Row="6" Name="SimulateButton7" Content="Button" HorizontalAlignment="Center"  VerticalAlignment="Center" Height="50" Width="60" Click="Btn_Click_SimulateSequence"/>
             </Grid>
         </Border>
 

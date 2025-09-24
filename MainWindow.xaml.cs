@@ -1,4 +1,5 @@
 ﻿using EffingoFaciemTuam.HandlingUserData;
+using EffingoFaciemTuam.Model;
 using EffingoFaciemTuam.SharpHookImplementation;
 using EffingoFaciemTuam.Windows;
 using System.Windows;
@@ -15,6 +16,8 @@ namespace EffingoFaciemTuam
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			var sequence = SequenceStore.Sequence;
 
 			//loading saved user data  from Properties.settings
 			SavingLoadingUserData.LoadUserData(this);
@@ -60,6 +63,15 @@ namespace EffingoFaciemTuam
 		{
 			SequenceManagement _window = new SequenceManagement();
 			_window.ShowDialog();
+		}
+
+		private void Btn_Click_SimulateSequence(object sender, RoutedEventArgs e)
+		{
+			SequenceModel _sequence = SequenceStore.Sequence;
+
+			Button_Click_CopyDataBasedOnID(sender, e);
+
+			InputSimulator.SimulateSequence(_sequence);
 		}
 	}
 }
