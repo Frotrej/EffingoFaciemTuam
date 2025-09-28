@@ -38,78 +38,6 @@ namespace EffingoFaciemTuam.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedTextBox2 {
-            get {
-                return ((string)(this["SavedTextBox2"]));
-            }
-            set {
-                this["SavedTextBox2"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedTextBox3 {
-            get {
-                return ((string)(this["SavedTextBox3"]));
-            }
-            set {
-                this["SavedTextBox3"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedTextBox4 {
-            get {
-                return ((string)(this["SavedTextBox4"]));
-            }
-            set {
-                this["SavedTextBox4"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedTextBox5 {
-            get {
-                return ((string)(this["SavedTextBox5"]));
-            }
-            set {
-                this["SavedTextBox5"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedTextBox6 {
-            get {
-                return ((string)(this["SavedTextBox6"]));
-            }
-            set {
-                this["SavedTextBox6"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SavedTextBox7 {
-            get {
-                return ((string)(this["SavedTextBox7"]));
-            }
-            set {
-                this["SavedTextBox7"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SavedSuffix1 {
             get {
                 return ((string)(this["SavedSuffix1"]));
@@ -170,6 +98,102 @@ namespace EffingoFaciemTuam.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox9 {
+            get {
+                return ((string)(this["SavedTextBox9"]));
+            }
+            set {
+                this["SavedTextBox9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox8 {
+            get {
+                return ((string)(this["SavedTextBox8"]));
+            }
+            set {
+                this["SavedTextBox8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox7 {
+            get {
+                return ((string)(this["SavedTextBox7"]));
+            }
+            set {
+                this["SavedTextBox7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox2 {
+            get {
+                return ((string)(this["SavedTextBox2"]));
+            }
+            set {
+                this["SavedTextBox2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox3 {
+            get {
+                return ((string)(this["SavedTextBox3"]));
+            }
+            set {
+                this["SavedTextBox3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox4 {
+            get {
+                return ((string)(this["SavedTextBox4"]));
+            }
+            set {
+                this["SavedTextBox4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox5 {
+            get {
+                return ((string)(this["SavedTextBox5"]));
+            }
+            set {
+                this["SavedTextBox5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedTextBox6 {
+            get {
+                return ((string)(this["SavedTextBox6"]));
+            }
+            set {
+                this["SavedTextBox6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string SavedSuffix6 {
             get {
                 return ((string)(this["SavedSuffix6"]));
@@ -188,6 +212,30 @@ namespace EffingoFaciemTuam.Properties {
             }
             set {
                 this["SavedSuffix7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix8 {
+            get {
+                return ((string)(this["SavedSuffix8"]));
+            }
+            set {
+                this["SavedSuffix8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SavedSuffix9 {
+            get {
+                return ((string)(this["SavedSuffix9"]));
+            }
+            set {
+                this["SavedSuffix9"] = value;
             }
         }
     }

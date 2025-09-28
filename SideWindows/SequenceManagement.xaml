@@ -17,26 +17,29 @@
         </Grid.RowDefinitions>
 
 
-        <DataGrid x:Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center" MinWidth="380" ItemsSource="{Binding Sequence, Source={x:Static models:SequenceStore.Sequence}}" AutoGenerateColumns="False" IsReadOnly="True" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" AlternatingRowBackground="LightGray">
+        <DataGrid x:Name="SequenceRepresentation" Grid.Row="0" HorizontalAlignment="Center" MinWidth="380" ItemsSource="{Binding Sequence, Source={x:Static models:SequenceStore.ShareSequence}}" AutoGenerateColumns="False" CanUserSortColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" AlternatingRowBackground="LightGray">
             <!--dodac filtrowanie automatyczne po kolumnie "numer korku"-->
 
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Krok" Binding="{Binding StepNumber}"/>
-                <DataGridTextColumn Header="Opóźnienie" Binding="{Binding Delay}"/>
-                <DataGridTextColumn Header="Akcja" Binding="{Binding Type}"/>
-                <DataGridTextColumn Header="Skrót" Binding="{Binding KeyboardKeysString}"/>
-                <DataGridTextColumn Header="MyszX" Binding="{Binding MouseX}"/>
-                <DataGridTextColumn Header="MyszY" Binding="{Binding MouseY}"/>
+                <DataGridTextColumn Header="Krok" Binding="{Binding StepNumber}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Opóźnienie" Binding="{Binding Delay}" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Akcja" Binding="{Binding Type}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="Skrót" Binding="{Binding KeyboardKeysString}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="MyszX" Binding="{Binding MouseX}" IsReadOnly="true"/>
+                <DataGridTextColumn Header="MyszY" Binding="{Binding MouseY}" IsReadOnly="true"/>
             </DataGrid.Columns>
         </DataGrid>
 
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button Content="Testuj sekwencje" Width="100" Height="40" Margin="20,0,20,0" Click="Button_Click_TestSequence"/>
 
-        <Button Content="+" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="350,0,0,0" Grid.Row="1" Width="40" Height="40" Click="Button_Click_AddElement"/>
-        <Button Content="-" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="400,0,0,0" Grid.Row="1" Width="40" Height="40" Click="Button_Click_RemoveElement"/>
-        <Button Content="Testuj sekwencje" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="80,0,0,0" Grid.Row="1" Width="100" Height="40" Click="Button_Click_TestSequence"/>
+            <Button Content="+" Width="40" Height="40" Margin="5,0,5,0" Click="Button_Click_AddElement"/>
+            <Button Content="-" Width="40" Height="40" Margin="5,0,5,0" Click="Button_Click_RemoveElement"/>
+        </WrapPanel>
 
-
-        <Button Content="Zamknij" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="240,0,0,0" Click="CloseWindow"/>
-        <Button Content="Zapisz" HorizontalAlignment="Left" VerticalAlignment="Center"  Grid.Row="2" Padding="5,5,5,5" Margin="310,0,0,0"/>
+        <WrapPanel Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Zamknij" Click="CloseWindow" Width="50" Height="20"/>
+        </WrapPanel>
+        
     </Grid>
 </Window>
