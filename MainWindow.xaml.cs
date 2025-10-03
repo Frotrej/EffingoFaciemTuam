@@ -1,5 +1,6 @@
-﻿using EffingoFaciemTuam.HandlingUserData;
+﻿using EffingoFaciemTuam.Model;
 using EffingoFaciemTuam.SharpHookImplementation;
+using EffingoFaciemTuam.UserDataHandling;
 using EffingoFaciemTuam.Windows;
 using System.Windows;
 using System.Windows.Controls;
@@ -16,10 +17,11 @@ namespace EffingoFaciemTuam
 		{
 			InitializeComponent();
 
-			//loading saved user data  from Properties.settings
+			//loading saved user data
 			SavingLoadingUserData.LoadUserData(this);
+			SequenceStore.LoadUserSequence();
 
-			UserEntryDataHolder.Instance.LoadDataFromView(this);
+			MainWindowUserDataHolder.Instance.LoadDataFromView(this);
 		}
 
 		private void OnMainWindowClose(object sender, EventArgs e)
@@ -38,9 +40,9 @@ namespace EffingoFaciemTuam
 			int buttonID = ExtractButtonIDFromItsName(sender);
 			if (buttonID == 0) return;
 
-			UserEntryDataHolder.Instance.LoadDataFromView(this);
+			MainWindowUserDataHolder.Instance.LoadDataFromView(this);
 
-			Clipboard.SetText(UserEntryDataHolder.Instance.GetRowOfData(buttonID - 1));
+			Clipboard.SetText(MainWindowUserDataHolder.Instance.GetRowOfData(buttonID - 1));
 		}
 
 		private int ExtractButtonIDFromItsName(object sender)
@@ -60,6 +62,15 @@ namespace EffingoFaciemTuam
 		{
 			SequenceManagement _window = new SequenceManagement();
 			_window.ShowDialog();
+		}
+
+		private void Btn_Click_SimulateSequence(object sender, RoutedEventArgs e)
+		{
+			SequenceModel _sequence = SequenceStore.ShareSequence;
+
+			Button_Click_CopyDataBasedOnID(sender, e);
+
+			InputSimulator.SimulateSequence(_sequence);
 		}
 	}
 }

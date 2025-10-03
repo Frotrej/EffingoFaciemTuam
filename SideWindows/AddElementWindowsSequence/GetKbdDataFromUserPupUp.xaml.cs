@@ -9,6 +9,8 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 
 		SharpHookImplementation.SharphookImplementation sharphookKbd;
 
+		public bool _operationSuccessful { get; private set; }
+
 
 		public GetKbdDataFromUserPupUp(SequenceElement element)
 		{
@@ -19,10 +21,10 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 			sharphookKbd = new();
 		}
 
-		private void Button_Click_StopTrackingAndCloseWindow(object sender, RoutedEventArgs e)
+		private void Button_Click_StopTrackingAndCloseWindowCorrectly(object sender, RoutedEventArgs e)
 		{
 			sharphookKbd.hook.Dispose();
-			Close();
+			WindowCloseSuccessfully();
 		}
 
 		private async void Button_Click_FillKbdSequenceElement(object sender, RoutedEventArgs e)
@@ -44,6 +46,17 @@ namespace EffingoFaciemTuam.SideWindows.AddElementWindowsSequence
 		private void Button_Click_Stop(object sender, RoutedEventArgs e)
 		{
 			sharphookKbd.hook.Stop();
+		}
+
+		private void Button_Click_Cancel(object sender, RoutedEventArgs e)
+		{
+			Close();
+		}
+
+		private void WindowCloseSuccessfully()
+		{
+			_operationSuccessful = true;
+			Close();
 		}
 	}
 }

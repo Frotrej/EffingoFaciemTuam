@@ -1,14 +1,14 @@
 ﻿using System.Windows;
 
-namespace EffingoFaciemTuam
+namespace EffingoFaciemTuam.UserDataHandling
 {
-	class UserEntryDataHolder
+	class MainWindowUserDataHolder
 	{
-		private static readonly UserEntryDataHolder _instance = new UserEntryDataHolder();
+		private static readonly MainWindowUserDataHolder _instance = new MainWindowUserDataHolder();
 
-		static UserEntryDataHolder() { }
-		private UserEntryDataHolder() { }
-		public static UserEntryDataHolder Instance {  get { return _instance; } }
+		static MainWindowUserDataHolder() { }
+		private MainWindowUserDataHolder() { }
+		public static MainWindowUserDataHolder Instance {  get { return _instance; } }
 
 		private List<RowOfData> _rowsOfData = new List<RowOfData>();
 
@@ -41,6 +41,8 @@ namespace EffingoFaciemTuam
 			SaveDataToList(5, mainWindow.TextBox5.Text, mainWindow.SuffixValue5.Text);
 			SaveDataToList(6, mainWindow.TextBox6.Text, mainWindow.SuffixValue6.Text);
 			SaveDataToList(7, mainWindow.TextBox7.Text, mainWindow.SuffixValue7.Text);
+			SaveDataToList(8, mainWindow.TextBox8.Text, mainWindow.SuffixValue8.Text);
+			SaveDataToList(9, mainWindow.TextBox9.Text, mainWindow.SuffixValue9.Text);
 		}
 
 		public string GetRowOfData(int id)
@@ -48,20 +50,7 @@ namespace EffingoFaciemTuam
 			RowOfData row = new RowOfData();
 			row = _rowsOfData[id];
 
-			return ($"{row.rowId}: {row.mainName}{row.suffixName}");
-		}
-
-		//not in use
-		public void CopyDataToClipboard()
-		{
-			string copy = "";
-
-			foreach (var item in _rowsOfData)
-			{
-				copy += ($"Mlyn: {item.rowId}: {item.mainName}{item.suffixName}\n");
-			}
-
-			Clipboard.SetText(copy);
+			return $"{row.rowId}: {row.mainName}{row.suffixName}";
 		}
 	}
 }

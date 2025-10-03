@@ -12,7 +12,7 @@
             <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
         <Button Content="Mysz" Grid.Column="0" Click="Button_Click_Mouse"/>
-        <Button Content="Klawiatura" Grid.Column="1" Click="Button_Click_Kbd"/>
+        <Button Content="Skrót klawiszowy" Grid.Column="1" Click="Button_Click_Kbd"/>
 
     </Grid>
 </Window>

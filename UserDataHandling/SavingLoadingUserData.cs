@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace EffingoFaciemTuam.HandlingUserData
+namespace EffingoFaciemTuam.UserDataHandling
 {
 	internal static class SavingLoadingUserData
 	{
@@ -18,6 +18,8 @@ namespace EffingoFaciemTuam.HandlingUserData
 			mainWindow.TextBox5.Text = Properties.Settings.Default.SavedTextBox5;
 			mainWindow.TextBox6.Text = Properties.Settings.Default.SavedTextBox6;
 			mainWindow.TextBox7.Text = Properties.Settings.Default.SavedTextBox7;
+			mainWindow.TextBox8.Text = Properties.Settings.Default.SavedTextBox8;
+			mainWindow.TextBox9.Text = Properties.Settings.Default.SavedTextBox9;
 
 			mainWindow.SuffixValue1.Text = Properties.Settings.Default.SavedSuffix1;
 			mainWindow.SuffixValue2.Text = Properties.Settings.Default.SavedSuffix2;
@@ -26,6 +28,8 @@ namespace EffingoFaciemTuam.HandlingUserData
 			mainWindow.SuffixValue5.Text = Properties.Settings.Default.SavedSuffix5;
 			mainWindow.SuffixValue6.Text = Properties.Settings.Default.SavedSuffix6;
 			mainWindow.SuffixValue7.Text = Properties.Settings.Default.SavedSuffix7;
+			mainWindow.SuffixValue8.Text = Properties.Settings.Default.SavedSuffix8;
+			mainWindow.SuffixValue9.Text = Properties.Settings.Default.SavedSuffix9;
 		}
 
 		internal static void SaveUserData(MainWindow mainWindow)
@@ -37,6 +41,8 @@ namespace EffingoFaciemTuam.HandlingUserData
 			Properties.Settings.Default.SavedTextBox5 = mainWindow.TextBox5.Text;
 			Properties.Settings.Default.SavedTextBox6 = mainWindow.TextBox6.Text;
 			Properties.Settings.Default.SavedTextBox7 = mainWindow.TextBox7.Text;
+			Properties.Settings.Default.SavedTextBox8 = mainWindow.TextBox8.Text;
+			Properties.Settings.Default.SavedTextBox9 = mainWindow.TextBox9.Text;
 
 			Properties.Settings.Default.SavedSuffix1 = mainWindow.SuffixValue1.Text;
 			Properties.Settings.Default.SavedSuffix2 = mainWindow.SuffixValue2.Text;
@@ -45,6 +51,8 @@ namespace EffingoFaciemTuam.HandlingUserData
 			Properties.Settings.Default.SavedSuffix5 = mainWindow.SuffixValue5.Text;
 			Properties.Settings.Default.SavedSuffix6 = mainWindow.SuffixValue6.Text;
 			Properties.Settings.Default.SavedSuffix7 = mainWindow.SuffixValue7.Text;
+			Properties.Settings.Default.SavedSuffix8 = mainWindow.SuffixValue8.Text;
+			Properties.Settings.Default.SavedSuffix9 = mainWindow.SuffixValue9.Text;
 
 			Properties.Settings.Default.Save();
 		}
