@@ -3,6 +3,7 @@ using EffingoFaciemTuam.SharpHookImplementation;
 using EffingoFaciemTuam.SideWindows;
 using EffingoFaciemTuam.SideWindows.AddElementWindowsSequence;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.DirectoryServices;
 using System.Windows;
 
@@ -16,7 +17,7 @@ namespace EffingoFaciemTuam.Windows
 		{
 			InitializeComponent();
 
-			Sequence = SequenceStore.Sequence;
+			Sequence = SequenceStore.ShareSequence;
 			DataContext = this;
 		}
 
