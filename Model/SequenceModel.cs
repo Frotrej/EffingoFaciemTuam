@@ -7,8 +7,7 @@ namespace EffingoFaciemTuam.Model
 {
 	public class SequenceModel
 	{
-
-		private ObservableCollection<SequenceElement> sequence = new ObservableCollection<SequenceElement>();
+		private ObservableCollection<SequenceElement> sequence;
 
 		public ObservableCollection<SequenceElement> Sequence
 		{
@@ -18,6 +17,8 @@ namespace EffingoFaciemTuam.Model
 
 		public SequenceModel()
 		{
+			sequence = new ObservableCollection<SequenceElement>();
+			
 			Sequence.CollectionChanged += User_CollectionChanged;
 		}
 
@@ -37,9 +38,9 @@ namespace EffingoFaciemTuam.Model
 			Sequence.RemoveAt(Sequence.Count - 1);
 		}
 
-		private void User_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
+		public void User_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
 		{
-			UserSequenceRepo.SaveSequenceToJson(this);
+			UserSequenceRepo.SaveToJson(this);
 		}
 	}
 }

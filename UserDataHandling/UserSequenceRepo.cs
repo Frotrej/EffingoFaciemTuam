@@ -4,10 +4,9 @@ using System.IO;
 
 namespace EffingoFaciemTuam.UserDataHandling
 {
-	internal static class UserSequenceRepo
+	public static class UserSequenceRepo
 	{
-
-		public static void SaveSequenceToJson(SequenceModel sequence)
+		public static void SaveToJson(SequenceModel sequence)
 		{
 			string json = JsonSerializer.Serialize(sequence);
 			File.WriteAllText("UserSequence.json", json);
@@ -15,12 +14,11 @@ namespace EffingoFaciemTuam.UserDataHandling
 
 		public static SequenceModel LoadSequenceFromJson()
 		{
-			if (!File.Exists("UserSequence.json"))
-			{
-				return new SequenceModel();
-			}
+			if (!File.Exists("UserSequence.json")) return new SequenceModel();
+
 			string json = File.ReadAllText("UserSequence.json");
 			SequenceModel? sequence = JsonSerializer.Deserialize<SequenceModel>(json);
+
 			return sequence ?? new SequenceModel();
 		}
 	}

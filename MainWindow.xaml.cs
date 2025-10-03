@@ -17,8 +17,6 @@ namespace EffingoFaciemTuam
 		{
 			InitializeComponent();
 
-			var sequence = SequenceStore.ShareSequence;
-
 			//loading saved user data
 			SavingLoadingUserData.LoadUserData(this);
 			SequenceStore.LoadUserSequence();

@@ -1,3 +1,5 @@
+using EffingoFaciemTuam.UserDataHandling;
+
 namespace EffingoFaciemTuam.Model
 {
     public static class SequenceStore
@@ -6,7 +8,13 @@ namespace EffingoFaciemTuam.Model
 
         public static void LoadUserSequence()
         {
-            ShareSequence = UserDataHandling.UserSequenceRepo.LoadSequenceFromJson();
-		}
-	}
+            var loaded = UserSequenceRepo.LoadSequenceFromJson();
+
+            ShareSequence.Sequence.Clear();
+
+            foreach (var el in loaded.Sequence)
+                ShareSequence.Sequence.Add(el);
+        }
+    }
 }
+
